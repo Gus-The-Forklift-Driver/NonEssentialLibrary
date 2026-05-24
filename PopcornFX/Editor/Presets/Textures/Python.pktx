@@ -1,0 +1,7 @@
+Version = 2.24.0.26363;
+CAssetGeneratorTexture_Python	$D857A09F
+{
+	Description = {
+		"@eng:A texture generated from a python script",
+	};
+}

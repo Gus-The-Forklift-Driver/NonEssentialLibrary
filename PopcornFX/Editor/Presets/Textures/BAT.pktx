@@ -1,0 +1,7 @@
+Version = 2.24.0.26363;
+CAssetGeneratorTexture_BAT	$D857A09F
+{
+	Description = {
+		"@eng:A bone animation texture (BAT) generated from an animated skinned mesh",
+	};
+}

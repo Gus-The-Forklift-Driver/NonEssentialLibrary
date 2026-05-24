@@ -1,0 +1,197 @@
+Version = 2.24.3.26836;
+CProjectSettings	$6B70D015
+{
+	General = "$81861AB7";
+	Scene = "$B660FBF9";
+	LOD = "$D857A09F";
+	Constants = "$4B933A29";
+	Features = "$9154DFA0";
+	Assets = "$D734A95F";
+	Budgets = "$35A36C4E";
+	Baking = "$8F7A985A";
+	Editor = "$00269EC3";
+	Rendering = "$EAC726E3";
+	Documentation = "$42E16C02";
+}
+CProjectSettingsGeneral	$81861AB7
+{
+	ProjectName = "Non essential library";
+	ProjectDescription = "Bunch of nodes that you probably don\'t need";
+	ProjectThumbnail = "PopcornFX/Editor/Thumbnails/PopcornFX/Library/SmonkingSheep/Thumbnail.png";
+	CompanyName = "SmonkingShep";
+	Homepage = "https://github.com/Gus-The-Forklift-Driver";
+	SupportContact = "Good luck lol";
+	RootDir = "..";
+	PresetsDir = "PopcornFX/Editor/Presets";
+	AnimationTracksDir = "PopcornFX/Editor/AnimationTracks";
+	ThumbnailsDir = "PopcornFX/Editor/Thumbnails";
+	LibraryDir = "PopcornFX/Library";
+	RuntimeConfigsDir = "PopcornFX/Config";
+	DocumentationDir = "PopcornFX/Documentation";
+	EditorCacheDir = "PopcornFX/Editor/Cache";
+}
+CProjectSettingsScene	$B660FBF9
+{
+	CoordinateFrame = Right_Handed_Y_Up;
+	CoordinateFrameAxisX = Up;
+	CoordinateFrameAxisY = Forward;
+	CoordinateFrameAxisZ = Right;
+	DistanceUnits = Meter;
+	MaxDistanceBeforeTeleport = inf;
+}
+CProjectSettingsAssets	$D734A95F
+{
+	EffectExtensions = {
+		"pkfx",
+	};
+	MeshExtensions = {
+		"fbx",
+		"gr2",
+		"pkgo",
+	};
+	ImageExtensions = {
+		"png",
+		"jpg",
+		"jpeg",
+		"tga",
+		"exr",
+		"hdr",
+		"dds",
+		"tif",
+		"tiff",
+		"pkm",
+		"pvr",
+		"pktx",
+	};
+	ImageAtlasExtensions = {
+		"pkat",
+	};
+	VectorFieldExtensions = {
+		"fga",
+		"pkvf",
+		"pkvx",
+	};
+	SoundExtensions = {
+		"mp3",
+		"wav",
+		"ogg",
+	};
+	SimCacheExtensions = {
+		"pksc",
+	};
+	FontExtensions = {
+		"ttf",
+		"otf",
+		"pkfm",
+	};
+	MaterialExtensions = {
+		"pkma",
+	};
+	VertexShaderExtensions = {
+		"vert",
+	};
+	FragmentShaderExtensions = {
+		"frag",
+	};
+	ShaderIncludeExtensions = {
+		"h",
+		"inl",
+	};
+	RendererInterfaceExtensions = {
+		"pkri",
+	};
+	VideoExtensions = {
+		"mp4",
+		"ogv",
+		"avi",
+		"wmv",
+	};
+}
+CProjectSettingsBaking	$8F7A985A
+{
+}
+CEditorProject	$DDECD857
+{
+}
+CProjectSettingsDocumentation	$42E16C02
+{
+}
+CProjectSettingsLOD	$D857A09F
+{
+}
+CProjectSettingsBudgets	$35A36C4E
+{
+}
+CProjectSettingsConstants	$4B933A29
+{
+	Constants = {
+		"$69D57342",
+		"$F57D922D",
+		"$AA1655F4",
+		"$AB93F1C7",
+		"$CF880096",
+		"$C9F5C011",
+		"$B34D67A8",
+		"$28CECB8B",
+	};
+}
+CProjectSettingsEditor	$00269EC3
+{
+	DefaultRestitution = 1.0000000e+00;
+	DefaultRestitutionCombineMode = Multiply;
+	DefaultFriction = 0.0000000e+00;
+	DefaultFrictionCombineMode = Average;
+	WindScale = 1.0000000e+00;
+}
+CProjectSettingsConstantItem	$69D57342
+{
+	Name = "physics.surfaceTypes.Rock";
+}
+CProjectSettingsConstantItem	$F57D922D
+{
+	Name = "physics.surfaceTypes.Grass";
+	Value = 1;
+}
+CProjectSettingsConstantItem	$AA1655F4
+{
+	Name = "physics.surfaceTypes.Sand";
+	Value = 2;
+}
+CProjectSettingsConstantItem	$AB93F1C7
+{
+	Name = "physics.surfaceTypes.Water";
+	Value = 3;
+}
+CProjectSettingsConstantItem	$CF880096
+{
+	Name = "physics.collisionFilters.All";
+}
+CProjectSettingsConstantItem	$C9F5C011
+{
+	Name = "physics.collisionFilters.Static";
+	Value = 1;
+}
+CProjectSettingsConstantItem	$B34D67A8
+{
+	Name = "physics.collisionFilters.Dynamic";
+	Value = 2;
+}
+CProjectSettingsConstantItem	$28CECB8B
+{
+	Name = "physics.collisionFilters.Player";
+	Value = 3;
+}
+CProjectSettingsFeatures	$9154DFA0
+{
+	DefaultMaterialBillboard = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	DefaultMaterialRibbon = "PopcornFX/Library/PopcornFXCore/Materials/Ribbon_Transparent.pkma";
+	DefaultMaterialMesh = "PopcornFX/Library/PopcornFXCore/Materials/Mesh_Opaque.pkma";
+	DefaultMaterialTriangle = "PopcornFX/Library/PopcornFXCore/Materials/Triangle_Transparent.pkma";
+	DefaultMaterialDecal = "PopcornFX/Library/PopcornFXCore/Materials/Decal_Default.pkma";
+	DefaultMaterialLight = "PopcornFX/Library/PopcornFXCore/Materials/Light_Default.pkma";
+	DefaultMaterialSound = "PopcornFX/Library/PopcornFXCore/Materials/Sound_Default.pkma";
+}
+CProjectSettingsRendering	$EAC726E3
+{
+	ToneMappingType = PopcornFX;
+}

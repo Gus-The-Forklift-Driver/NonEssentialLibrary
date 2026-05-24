@@ -1,0 +1,7 @@
+Version = 2.24.0.26363;
+CAssetGeneratorGeometry_Graph	$D857A09F
+{
+	Description = {
+		"@eng:A mesh generated from a simple solid",
+	};
+}

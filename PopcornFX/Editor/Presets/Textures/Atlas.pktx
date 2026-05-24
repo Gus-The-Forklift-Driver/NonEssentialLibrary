@@ -1,0 +1,7 @@
+Version = 2.24.0.26363;
+CAssetGeneratorTexture_Atlas	$D857A09F
+{
+	Description = {
+		"@eng:A texture atlas generated from a sequence of textures",
+	};
+}

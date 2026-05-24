@@ -1,0 +1,8 @@
+Version = 2.24.0.26363;
+CAssetGeneratorVectorField_Constant	$D857A040
+{
+	Description = {
+		"@eng:A vector-field generated from a constant vector",
+	};
+	Dimensions = uint3(256, 256, 1);
+}
