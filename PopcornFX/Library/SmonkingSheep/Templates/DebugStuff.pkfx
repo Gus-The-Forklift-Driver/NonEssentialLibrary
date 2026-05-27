@@ -9,6 +9,7 @@ CParticleEffect	$D857A09F
 		"$6A8594F2",
 		"$1ABA4311",
 		"$EE24EC22",
+		"$09998C85",
 		"$899162C7",
 		"$FC896C31",
 		"$E869B722",
@@ -58,6 +59,7 @@ CEditorAssetEffect	$4ADE8DE2
 	Camera3Position = float3(0.0000000e+00, 0.0000000e+00, 2.0000000e+00);
 	Camera3Orientation = float3(0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
 	Camera3Fov = 0.0000000e+00;
+	DebugDrawInfos = true;
 	Backdrops_Scene = "$D279714D";
 }
 CEditorBackdropList	$D279714D
@@ -11834,4 +11836,404 @@ CParticleNodeAnnotation	$0BC49983
 	};
 	WorkspacePosition = int2(-924, -638);
 	SelfSize = int2(1430, 352);
+}
+CParticleNodeGraph	$09998C85
+{
+	CustomName = "Gizmo.Cone";
+	Description = {
+		"@eng:Debug render a gizmo of the same kind.\\n<strong style=\"color: red;\">WARNING : this will destroy your editor fps</strong>\\nUse with caution (or don\'t, IDGAF)",
+	};
+	Public = true;
+	ClassType = Renderer;
+	IconKey = "Renderer_Triangle";
+	Nodes = {
+		"$D24B9BCA",
+		"$15D994BB",
+		"$7801D1CC",
+		"$DE539180",
+		"$0D4B8B98",
+		"$FE9781D1",
+		"$67F2295E",
+		"$158E39F5",
+		"$9D9627EB",
+		"$9AA06143",
+		"$4AFA293D",
+	};
+	WorkspaceZoom = -4;
+	Collapsed = true;
+}
+CParticleNodeTemplateExport	$D24B9BCA
+{
+	Description = {
+		"@eng:Radius in degrees",
+	};
+	InputPins = {
+		"$521DC7F2",
+	};
+	OutputPins = {
+		"$10757B58",
+	};
+	WorkspacePosition = int2(-506, -44);
+	ExportedName = "Radius";
+	ExportedType = float;
+	Type = Input;
+	DefaultValueF4 = float4(2.0000000e+01, 1.0000000e+00, 1.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$521DC7F2
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$D24B9BCA";
+}
+CParticleNodePinOut	$10757B58
+{
+	SelfName = "Value";
+	Owner = "$D24B9BCA";
+	ConnectedPins = {
+		"$0CB1EBD5",
+	};
+}
+CParticleNodeTemplateExport	$15D994BB
+{
+	InputPins = {
+		"$FE33ADF4",
+	};
+	OutputPins = {
+		"$3295F559",
+	};
+	WorkspacePosition = int2(-506, 374);
+	ExportedName = "Enabled";
+	ExportedType = bool;
+	Type = Input;
+	VisibleByDefault = true;
+	DefaultValueB4 = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$FE33ADF4
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$15D994BB";
+}
+CParticleNodePinOut	$3295F559
+{
+	SelfName = "Value";
+	Owner = "$15D994BB";
+	ConnectedPins = {
+		"$493EC02F",
+	};
+}
+CParticleNodeTemplateExport	$7801D1CC
+{
+	InputPins = {
+		"$66A28AA9",
+	};
+	OutputPins = {
+		"$99031E22",
+	};
+	WorkspacePosition = int2(-506, -308);
+	ExportedName = "Position";
+	ExportedType = float3;
+	Semantic = 3D_Coordinate;
+	Type = Input;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$66A28AA9
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$7801D1CC";
+}
+CParticleNodePinOut	$99031E22
+{
+	SelfName = "Value";
+	Owner = "$7801D1CC";
+	ConnectedPins = {
+		"$262556FE",
+	};
+}
+CParticleNodeTemplateExport	$DE539180
+{
+	InputPins = {
+		"$5FF46AD7",
+	};
+	OutputPins = {
+		"$47F83EF2",
+	};
+	WorkspacePosition = int2(-506, 88);
+	ExportedName = "ColorStart";
+	ExportedType = float4;
+	Semantic = Color;
+	Type = Input;
+	DefaultValueF4 = float4(2.2829211e+00, 2.2829211e+00, 2.2829211e+00, 1.0000000e+00);
+}
+CParticleNodePinIn	$5FF46AD7
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$DE539180";
+}
+CParticleNodePinOut	$47F83EF2
+{
+	SelfName = "Value";
+	Owner = "$DE539180";
+	ConnectedPins = {
+		"$316311EB",
+	};
+}
+CParticleNodeTemplateExport	$0D4B8B98
+{
+	InputPins = {
+		"$933C9C66",
+	};
+	OutputPins = {
+		"$6049D1E7",
+	};
+	WorkspacePosition = int2(-506, -176);
+	ExportedName = "Vector";
+	ExportedType = float3;
+	Type = Input;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$933C9C66
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$0D4B8B98";
+}
+CParticleNodePinOut	$6049D1E7
+{
+	SelfName = "Value";
+	Owner = "$0D4B8B98";
+	ConnectedPins = {
+		"$F179816F",
+	};
+}
+CParticleNodePassThrough	$FE9781D1
+{
+	InputPins = {
+		"$493EC02F",
+	};
+	OutputPins = {
+		"$7EFE69CE",
+	};
+	WorkspacePosition = int2(-110, 396);
+}
+CParticleNodePinIn	$493EC02F
+{
+	SelfName = "Value";
+	Owner = "$FE9781D1";
+	ConnectedPins = {
+		"$3295F559",
+	};
+}
+CParticleNodePinOut	$7EFE69CE
+{
+	SelfName = "Value";
+	Owner = "$FE9781D1";
+	ConnectedPins = {
+		"$3E8F817E",
+	};
+}
+CParticleNodePassThrough	$67F2295E
+{
+	InputPins = {
+		"$316311EB",
+	};
+	OutputPins = {
+		"$68BE23CA",
+	};
+	WorkspacePosition = int2(-110, 110);
+}
+CParticleNodePinIn	$316311EB
+{
+	SelfName = "Value";
+	Owner = "$67F2295E";
+	ConnectedPins = {
+		"$47F83EF2",
+	};
+}
+CParticleNodePinOut	$68BE23CA
+{
+	SelfName = "Value";
+	Owner = "$67F2295E";
+	ConnectedPins = {
+		"$F57A2F78",
+	};
+}
+CParticleNodeAnnotation	$158E39F5
+{
+	CustomName = {
+		"@eng:$(Graph.Name)",
+	};
+	Description = {
+		"@eng:$(Graph.Description)",
+	};
+	WorkspacePosition = int2(-792, -704);
+	SelfSize = int2(1430, 352);
+}
+CParticleNodeScript	$9D9627EB
+{
+	ExecStage = Evolve;
+	InputPins = {
+		"$262556FE",
+		"$F179816F",
+		"$0CB1EBD5",
+		"$3E8F817E",
+		"$F57A2F78",
+		"$5C87FD2B",
+	};
+	WorkspacePosition = int2(220, -308);
+	Expression = "//inputs
+//float3 Forward
+//float3 Origin
+//float Radius
+//bool Enabled
+//float4 ColorStart
+//float4 ColorEnd
+float radii = degrees.cos(Radius);
+float mul = sqrt(1-radii*radii);
+float len = length(Forward);
+Forward = normalize(Forward);
+float3 side = normalize(iif(cross(Forward,float3(1,0,0)),cross(Forward,float3(1,0,0)),(abs(dot(Forward,float3(1,0,0)))>0.9)));
+float3 side2 = normalize(cross(side,Forward));
+float3 v0 = Origin + len*(Forward * radii + side * radians.cos((1.f / 8.f) * pi * 2.0f) * mul + side2 * radians.sin((1.f / 8.f) * pi * 2.0f) * mul);
+float3 v1 = Origin + len*(Forward * radii + side * radians.cos((2.f / 8.f) * pi * 2.0f) * mul + side2 * radians.sin((2.f / 8.f) * pi * 2.0f) * mul);
+float3 v2 = Origin + len*(Forward * radii + side * radians.cos((3.f / 8.f) * pi * 2.0f) * mul + side2 * radians.sin((3.f / 8.f) * pi * 2.0f) * mul);
+float3 v3 = Origin + len*(Forward * radii + side * radians.cos((4.f / 8.f) * pi * 2.0f) * mul + side2 * radians.sin((4.f / 8.f) * pi * 2.0f) * mul);
+float3 v4 = Origin + len*(Forward * radii + side * radians.cos((5.f / 8.f) * pi * 2.0f) * mul + side2 * radians.sin((5.f / 8.f) * pi * 2.0f) * mul);
+float3 v5 = Origin + len*(Forward * radii + side * radians.cos((6.f / 8.f) * pi * 2.0f) * mul + side2 * radians.sin((6.f / 8.f) * pi * 2.0f) * mul);
+float3 v6 = Origin + len*(Forward * radii + side * radians.cos((7.f / 8.f) * pi * 2.0f) * mul + side2 * radians.sin((7.f / 8.f) * pi * 2.0f) * mul);
+float3 v7 = Origin + len*(Forward * radii + side * radians.cos((8.f / 8.f) * pi * 2.0f) * mul + side2 * radians.sin((8.f / 8.f) * pi * 2.0f) * mul);
+debug.drawLine(Enabled, Origin, v0, ColorStart, ColorEnd);
+debug.drawLine(Enabled, v7, v0, ColorEnd, ColorEnd);
+debug.drawLine(Enabled, Origin, v1, ColorStart, ColorEnd);
+debug.drawLine(Enabled, v0, v1, ColorEnd, ColorEnd);
+debug.drawLine(Enabled, Origin, v2, ColorStart, ColorEnd);
+debug.drawLine(Enabled, v1, v2, ColorEnd, ColorEnd);
+debug.drawLine(Enabled, Origin, v3, ColorStart, ColorEnd);
+debug.drawLine(Enabled, v2, v3, ColorEnd, ColorEnd);
+debug.drawLine(Enabled, Origin, v4, ColorStart, ColorEnd);
+debug.drawLine(Enabled, v3, v4, ColorEnd, ColorEnd);
+debug.drawLine(Enabled, Origin, v5, ColorStart, ColorEnd);
+debug.drawLine(Enabled, v4, v5, ColorEnd, ColorEnd);
+debug.drawLine(Enabled, Origin, v6, ColorStart, ColorEnd);
+debug.drawLine(Enabled, v5, v6, ColorEnd, ColorEnd);
+debug.drawLine(Enabled, Origin, v7, ColorStart, ColorEnd);
+debug.drawLine(Enabled, v6, v7, ColorEnd, ColorEnd);";
+}
+CParticleNodePinIn	$F179816F
+{
+	SelfName = "Forward";
+	Type = float3;
+	Owner = "$9D9627EB";
+	BaseType = float3;
+	ConnectedPins = {
+		"$6049D1E7",
+	};
+}
+CParticleNodePinIn	$262556FE
+{
+	SelfName = "Origin";
+	Type = float3;
+	Owner = "$9D9627EB";
+	BaseType = float3;
+	ConnectedPins = {
+		"$99031E22",
+	};
+}
+CParticleNodePinIn	$0CB1EBD5
+{
+	SelfName = "Radius";
+	Type = float;
+	Owner = "$9D9627EB";
+	BaseType = float;
+	ConnectedPins = {
+		"$10757B58",
+	};
+}
+CParticleNodePinIn	$3E8F817E
+{
+	SelfName = "Enabled";
+	Type = bool;
+	Owner = "$9D9627EB";
+	BaseType = bool;
+	ConnectedPins = {
+		"$7EFE69CE",
+	};
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$F57A2F78
+{
+	SelfName = "ColorStart";
+	Type = float4;
+	Owner = "$9D9627EB";
+	BaseType = float4;
+	ConnectedPins = {
+		"$68BE23CA",
+	};
+}
+CParticleNodePinIn	$5C87FD2B
+{
+	SelfName = "ColorEnd";
+	Type = float4;
+	Owner = "$9D9627EB";
+	BaseType = float4;
+	ConnectedPins = {
+		"$2FBBF845",
+	};
+}
+CParticleNodeTemplateExport	$9AA06143
+{
+	InputPins = {
+		"$EDC6D2E3",
+	};
+	OutputPins = {
+		"$B9801788",
+	};
+	WorkspacePosition = int2(-506, 220);
+	ExportedName = "ColorEnd";
+	ExportedType = float4;
+	Semantic = Color;
+	Type = Input;
+	DefaultValueF4 = float4(2.2829211e+00, 2.2829211e+00, 2.2829211e+00, 1.0000000e+00);
+}
+CParticleNodePinIn	$EDC6D2E3
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$9AA06143";
+}
+CParticleNodePinOut	$B9801788
+{
+	SelfName = "Value";
+	Owner = "$9AA06143";
+	ConnectedPins = {
+		"$89B11BBF",
+	};
+}
+CParticleNodePassThrough	$4AFA293D
+{
+	InputPins = {
+		"$89B11BBF",
+	};
+	OutputPins = {
+		"$2FBBF845",
+	};
+	WorkspacePosition = int2(-110, 242);
+}
+CParticleNodePinIn	$89B11BBF
+{
+	SelfName = "Value";
+	Owner = "$4AFA293D";
+	ConnectedPins = {
+		"$B9801788",
+	};
+}
+CParticleNodePinOut	$2FBBF845
+{
+	SelfName = "Value";
+	Owner = "$4AFA293D";
+	ConnectedPins = {
+		"$5C87FD2B",
+	};
 }

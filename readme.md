@@ -26,10 +26,10 @@ To install, go to you project. In the content browser go to File -> Import Packa
 The nodes should be accessible straight away in your effects.
 
 ## Usage and documentation
-There are no documentation for this project right now. All the nodes should be either self explanatory OR have a description on how they work.
+There is no documentation for this project right now. All the nodes should be either self explanatory OR have a description on how they work.
 You can see the node list [here](https://github.com/Gus-The-Forklift-Driver/NonEssentialLibrary/wiki/Node-list)
 
 ## Licensing
-I kinda picked a license with my ass, if you have any issues / blocker with it i'd be happy to discuss it with you.
+If you have any issues / blocker, regarding the licensing, i'd be happy to discuss it with you.
 
 <a href="https://github.com/Gus-The-Forklift-Driver/NonEssentialLibrary">Non Essential Library</a> © 2026 by <a href="https://github.com/Gus-The-Forklift-Driver">Benoit Hubert</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">

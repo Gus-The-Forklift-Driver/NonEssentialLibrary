@@ -43,6 +43,9 @@ CParticleEffect	$D857A09F
 		"$0515F3D7",
 		"$7B933B0A",
 		"$6C504F13",
+		"$B2A77D1E",
+		"$FDBA68A1",
+		"$3AC97FE7",
 	};
 	AttributeFlatList = "$35A36C4E";
 }
@@ -58,6 +61,7 @@ CParticleNodeGraph	$4B933A29
 	CustomName = "Root";
 	Nodes = {
 		"$2BBAE5F0",
+		"$AA925D4C",
 	};
 	Timeline = "$9154DFA0";
 	WorkspaceZoom = -4;
@@ -85,6 +89,7 @@ CEditorAssetEffect	$4ADE8DE2
 	Camera3Position = float3(0.0000000e+00, 0.0000000e+00, 2.0000000e+00);
 	Camera3Orientation = float3(0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
 	Camera3Fov = 0.0000000e+00;
+	DebugDrawInfos = true;
 	Backdrops_Scene = "$D279714D";
 }
 CEditorBackdropList	$D279714D
@@ -164,6 +169,9 @@ CParticleNodePinOut	$14978373
 	Type = event;
 	Owner = "$2BBAE5F0";
 	BaseType = event;
+	ConnectedPins = {
+		"$CB43DA38",
+	};
 }
 CParticleNodeGraph	$A6C996FE
 {
@@ -13220,13 +13228,13 @@ CParticleNodeGraph	$FB376A03
 		"$438D0505",
 		"$DAB49394",
 		"$FEBB4089",
-		"$B09DDBB8",
 		"$F024A205",
 		"$B99C4FFE",
 		"$C4498FAB",
 		"$488A3830",
 		"$2B14373F",
 		"$6BF11557",
+		"$A508542B",
 	};
 	WorkspaceZoom = -4;
 }
@@ -13403,7 +13411,7 @@ CParticleNodePinIn	$CEB46D73
 	Owner = "$FEBB4089";
 	BaseType = float;
 	ConnectedPins = {
-		"$4CCDE59B",
+		"$05061410",
 	};
 }
 CParticleNodePinIn	$A1E8D650
@@ -13451,34 +13459,6 @@ CParticleNodePinOut	$54C25CB3
 		"$B9F6FAFD",
 	};
 }
-CParticleNodeTypeCast	$B09DDBB8
-{
-	InputPins = {
-		"$E5674ED4",
-	};
-	OutputPins = {
-		"$4CCDE59B",
-	};
-	WorkspacePosition = int2(-440, 22);
-	TargetType = int;
-}
-CParticleNodePinIn	$E5674ED4
-{
-	SelfName = "Value";
-	Owner = "$B09DDBB8";
-	ConnectedPins = {
-		"$C9EEB9F9",
-	};
-}
-CParticleNodePinOut	$4CCDE59B
-{
-	SelfName = "Value";
-	Owner = "$B09DDBB8";
-	ConnectedPins = {
-		"$CEB46D73",
-		"$A37289F2",
-	};
-}
 CParticleNodeTemplateExport	$F024A205
 {
 	Description = {
@@ -13492,7 +13472,7 @@ CParticleNodeTemplateExport	$F024A205
 	};
 	WorkspacePosition = int2(-660, 22);
 	ExportedName = "Count";
-	ExportedType = int;
+	ExportedTypeMask = 546;
 	Type = Input;
 	VisibleByDefault = true;
 }
@@ -13507,7 +13487,7 @@ CParticleNodePinOut	$C9EEB9F9
 	SelfName = "Value";
 	Owner = "$F024A205";
 	ConnectedPins = {
-		"$E5674ED4",
+		"$521B92EE",
 	};
 }
 CParticleNodeDiscretizationPoint	$B99C4FFE
@@ -13544,7 +13524,7 @@ CParticleNodeEventPayloadAppend	$C4498FAB
 	};
 	WorkspacePosition = int2(484, 22);
 	PayloadName = "SpawnCount";
-	PayloadType = int;
+	PayloadType = float;
 }
 CParticleNodePinIn	$A1855D20
 {
@@ -13559,9 +13539,9 @@ CParticleNodePinIn	$A1855D20
 CParticleNodePinIn	$6F66ED3C
 {
 	SelfName = "Value";
-	Type = int;
+	Type = float;
 	Owner = "$C4498FAB";
-	BaseType = int;
+	BaseType = float;
 	ConnectedPins = {
 		"$49AABEF2",
 	};
@@ -13617,7 +13597,7 @@ CParticleNodePinIn	$A37289F2
 	SelfName = "Value";
 	Owner = "$2B14373F";
 	ConnectedPins = {
-		"$4CCDE59B",
+		"$05061410",
 	};
 }
 CParticleNodePinOut	$27EF334F
@@ -50579,4 +50559,5436 @@ CParticleNodeAnnotation	$FF29A6D2
 	};
 	WorkspacePosition = int2(-792, -34320);
 	SelfSize = int2(1430, 352);
+}
+CParticleNodePassThrough	$A508542B
+{
+	InputPins = {
+		"$521B92EE",
+	};
+	OutputPins = {
+		"$05061410",
+	};
+	WorkspacePosition = int2(-308, 44);
+}
+CParticleNodePinIn	$521B92EE
+{
+	SelfName = "Value";
+	Owner = "$A508542B";
+	ConnectedPins = {
+		"$C9EEB9F9",
+	};
+}
+CParticleNodePinOut	$05061410
+{
+	SelfName = "Value";
+	Owner = "$A508542B";
+	ConnectedPins = {
+		"$CEB46D73",
+		"$A37289F2",
+	};
+}
+CParticleNodeGraph	$B2A77D1E
+{
+	CustomName = "​";
+	Description = {
+		"@eng:Does nothing, here just for layout.",
+	};
+	Public = true;
+	IconKey = "Toolbar_ExportNone";
+	SearchKeywords = "null empty";
+	Nodes = {
+		"$D31C2D44",
+		"$8424459F",
+	};
+	WorkspaceZoom = -4;
+}
+CParticleNodeTemplateExport	$D31C2D44
+{
+	InputPins = {
+		"$CF1D4609",
+	};
+	OutputPins = {
+		"$CB9030AE",
+	};
+	WorkspacePosition = int2(-198, -44);
+	ExportedName = "​";
+	Type = Input;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$CF1D4609
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$D31C2D44";
+}
+CParticleNodePinOut	$CB9030AE
+{
+	SelfName = "Value";
+	Owner = "$D31C2D44";
+	ConnectedPins = {
+		"$C551056E",
+	};
+}
+CParticleNodeTemplateExport	$8424459F
+{
+	InputPins = {
+		"$C551056E",
+	};
+	WorkspacePosition = int2(-22, -44);
+	ExportedName = "​";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$C551056E
+{
+	SelfName = "Value";
+	Owner = "$8424459F";
+	ConnectedPins = {
+		"$CB9030AE",
+	};
+}
+CParticleNodeGraph	$FDBA68A1
+{
+	CustomName = "debug.drawDistance";
+	Description = {
+		"@eng:Draws a line beetween two points and the distance beetween these two points",
+	};
+	Public = true;
+	ClassType = Renderer;
+	IconKey = "Toolbar_CurveSnap";
+	Nodes = {
+		"$AE24D1F4",
+		"$68EB2E55",
+		"$ACEFEABA",
+		"$CF67CBEE",
+		"$D601AB23",
+		"$CD6BF8AF",
+		"$365670ED",
+		"$7A7B213A",
+		"$993E8A0B",
+		"$EA7F8581",
+		"$60C78A57",
+		"$9AFAC8A4",
+		"$F41E0A20",
+		"$5877AF05",
+	};
+	WorkspaceZoom = -4;
+	Collapsed = true;
+}
+CParticleNodeTemplate	$AE24D1F4
+{
+	InputPins = {
+		"$EAB4C840",
+		"$6CB68491",
+		"$B0DCB61F",
+		"$B8202BA7",
+	};
+	OutputPins = {
+		"$DDC8A8A8",
+	};
+	WorkspacePosition = int2(-220, 0);
+	SubGraphFilePath = "PopcornFX/Library/PopcornFXCore/Templates/Core.pkfx";
+	SubGraphName = "distance";
+}
+CParticleNodePinIn	$EAB4C840
+{
+	SelfName = "ValueA";
+	Type = float;
+	Owner = "$AE24D1F4";
+	ConnectedPins = {
+		"$4622373D",
+	};
+}
+CParticleNodePinIn	$6CB68491
+{
+	SelfName = "ValueB";
+	Type = float;
+	Owner = "$AE24D1F4";
+	ConnectedPins = {
+		"$E0B88703",
+	};
+}
+CParticleNodePinIn	$B0DCB61F
+{
+	SelfName = "Metric";
+	Type = int;
+	Visible = false;
+	Owner = "$AE24D1F4";
+	BaseType = int;
+}
+CParticleNodePinIn	$B8202BA7
+{
+	SelfName = "k";
+	Type = float;
+	Visible = false;
+	Owner = "$AE24D1F4";
+	BaseType = float;
+	ValueF = float4(2.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$DDC8A8A8
+{
+	SelfName = "Distance";
+	Type = float;
+	Owner = "$AE24D1F4";
+	ConnectedPins = {
+		"$3DBCD7E4",
+	};
+}
+CParticleNodeTemplate	$68EB2E55
+{
+	InputPins = {
+		"$8D17591A",
+		"$FFCA9E3A",
+		"$31F2133C",
+		"$EC922176",
+		"$3DBCD7E4",
+		"$5EF85A7B",
+		"$56EA8E74",
+	};
+	WorkspacePosition = int2(352, -220);
+	SubGraphFilePath = "PopcornFX/Library/PopcornFXCore/Templates/Debug.pkfx";
+	SubGraphName = "debug.drawValue";
+}
+CParticleNodePinIn	$8D17591A
+{
+	SelfName = "Enabled";
+	Type = bool;
+	Owner = "$68EB2E55";
+	BaseType = bool;
+	ConnectedPins = {
+		"$3DA8DB22",
+	};
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$FFCA9E3A
+{
+	SelfName = "Position";
+	Type = float3;
+	Owner = "$68EB2E55";
+	BaseType = float3;
+	ConnectedPins = {
+		"$C3F63AA3",
+	};
+}
+CParticleNodePinIn	$31F2133C
+{
+	SelfName = "FontScale";
+	Type = float;
+	Visible = false;
+	Owner = "$68EB2E55";
+	BaseType = float;
+	ValueF = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$EC922176
+{
+	SelfName = "Color";
+	Type = float4;
+	Owner = "$68EB2E55";
+	BaseType = float4;
+	ConnectedPins = {
+		"$E297D094",
+	};
+	ValueF = float4(1.0000000e+00, 1.0000000e+00, 1.0000000e+00, 1.0000000e+00);
+}
+CParticleNodePinIn	$3DBCD7E4
+{
+	SelfName = "Value";
+	Type = float;
+	Owner = "$68EB2E55";
+	ConnectedPins = {
+		"$DDC8A8A8",
+	};
+}
+CParticleNodePinIn	$5EF85A7B
+{
+	SelfName = "ScreenOffset";
+	Type = float2;
+	Visible = false;
+	Owner = "$68EB2E55";
+	BaseType = float2;
+}
+CParticleNodePinIn	$56EA8E74
+{
+	SelfName = "AlignMode";
+	Type = int;
+	Visible = false;
+	Owner = "$68EB2E55";
+	BaseType = int;
+	ValueI = int4(1, 0, 0, 0);
+}
+CParticleNodeTemplateExport	$ACEFEABA
+{
+	InputPins = {
+		"$B6E03DB8",
+	};
+	OutputPins = {
+		"$FB808B55",
+	};
+	WorkspacePosition = int2(-572, 198);
+	ExportedName = "Enabled";
+	ExportedType = bool;
+	Type = Input;
+	Order = 1;
+	DefaultValueB4 = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$B6E03DB8
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$ACEFEABA";
+}
+CParticleNodePinOut	$FB808B55
+{
+	SelfName = "Value";
+	Owner = "$ACEFEABA";
+	ConnectedPins = {
+		"$904080F3",
+		"$9140CA02",
+	};
+}
+CParticleNodePassThrough	$CF67CBEE
+{
+	InputPins = {
+		"$226FBF6D",
+	};
+	OutputPins = {
+		"$E0B88703",
+	};
+	WorkspacePosition = int2(-462, 66);
+}
+CParticleNodePinIn	$226FBF6D
+{
+	SelfName = "Value";
+	Owner = "$CF67CBEE";
+	ConnectedPins = {
+		"$BD73BC75",
+	};
+}
+CParticleNodePinOut	$E0B88703
+{
+	SelfName = "Value";
+	Owner = "$CF67CBEE";
+	ConnectedPins = {
+		"$6CB68491",
+		"$13BBFD44",
+		"$65976CF7",
+	};
+}
+CParticleNodeArithmetic	$D601AB23
+{
+	InputPins = {
+		"$D7C17FFE",
+		"$13BBFD44",
+	};
+	OutputPins = {
+		"$03C216D9",
+	};
+	WorkspacePosition = int2(-220, -176);
+}
+CParticleNodePinIn	$D7C17FFE
+{
+	SelfName = "Value";
+	Owner = "$D601AB23";
+	ConnectedPins = {
+		"$4622373D",
+	};
+}
+CParticleNodePinIn	$13BBFD44
+{
+	SelfName = "ValueB";
+	Owner = "$D601AB23";
+	ConnectedPins = {
+		"$E0B88703",
+	};
+}
+CParticleNodePinOut	$03C216D9
+{
+	SelfName = "Value";
+	Owner = "$D601AB23";
+	ConnectedPins = {
+		"$750CC372",
+	};
+}
+CParticleNodeArithmetic	$CD6BF8AF
+{
+	InputPins = {
+		"$750CC372",
+		"$0D41645A",
+	};
+	OutputPins = {
+		"$C3F63AA3",
+	};
+	WorkspacePosition = int2(0, -176);
+	Operation = Div;
+}
+CParticleNodePinIn	$750CC372
+{
+	SelfName = "Value";
+	Owner = "$CD6BF8AF";
+	ConnectedPins = {
+		"$03C216D9",
+	};
+}
+CParticleNodePinIn	$0D41645A
+{
+	SelfName = "ValueB";
+	Type = float;
+	Owner = "$CD6BF8AF";
+	ValueF = float4(2.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$C3F63AA3
+{
+	SelfName = "Value";
+	Owner = "$CD6BF8AF";
+	ConnectedPins = {
+		"$FFCA9E3A",
+	};
+}
+CParticleNodeTemplate	$365670ED
+{
+	InputPins = {
+		"$986AFA05",
+		"$65976CF7",
+		"$2553903F",
+		"$904080F3",
+		"$D0C9F6D3",
+		"$E83D98E4",
+	};
+	WorkspacePosition = int2(-220, -374);
+	SubGraphFilePath = "PopcornFX/Library/PopcornFXCore/Templates/Debug.pkfx";
+	SubGraphName = "debug.drawLine";
+}
+CParticleNodePinIn	$986AFA05
+{
+	SelfName = "PositionA";
+	Type = float3;
+	Owner = "$365670ED";
+	BaseType = float3;
+	ConnectedPins = {
+		"$4622373D",
+	};
+}
+CParticleNodePinIn	$65976CF7
+{
+	SelfName = "PositionB";
+	Type = float3;
+	Owner = "$365670ED";
+	BaseType = float3;
+	ConnectedPins = {
+		"$E0B88703",
+	};
+}
+CParticleNodePinIn	$2553903F
+{
+	SelfName = "UseSecondColor";
+	Type = bool;
+	Visible = false;
+	Owner = "$365670ED";
+	BaseType = bool;
+}
+CParticleNodePinIn	$904080F3
+{
+	SelfName = "Enabled";
+	Type = bool;
+	Owner = "$365670ED";
+	BaseType = bool;
+	ConnectedPins = {
+		"$FB808B55",
+	};
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$D0C9F6D3
+{
+	SelfName = "Color";
+	Type = float4;
+	Owner = "$365670ED";
+	BaseType = float4;
+	ConnectedPins = {
+		"$8AC9A170",
+	};
+	ValueF = float4(2.3317888e-01, 2.3317888e-01, 2.3317888e-01, 1.0000000e+00);
+}
+CParticleNodePinIn	$E83D98E4
+{
+	SelfName = "ColorEnd";
+	Type = float4;
+	Visible = false;
+	Owner = "$365670ED";
+	BaseType = float4;
+	ValueF = float4(1.0000000e+00, 1.0000000e+00, 1.0000000e+00, 1.0000000e+00);
+}
+CParticleNodePassThrough	$7A7B213A
+{
+	InputPins = {
+		"$06776589",
+	};
+	OutputPins = {
+		"$4622373D",
+	};
+	WorkspacePosition = int2(-506, -352);
+}
+CParticleNodePinIn	$06776589
+{
+	SelfName = "Value";
+	Owner = "$7A7B213A";
+	ConnectedPins = {
+		"$4ACDBAB1",
+	};
+}
+CParticleNodePinOut	$4622373D
+{
+	SelfName = "Value";
+	Owner = "$7A7B213A";
+	ConnectedPins = {
+		"$EAB4C840",
+		"$D7C17FFE",
+		"$986AFA05",
+	};
+}
+CParticleNodeTemplateExport	$993E8A0B
+{
+	InputPins = {
+		"$26D24720",
+	};
+	OutputPins = {
+		"$BD73BC75",
+	};
+	WorkspacePosition = int2(-770, 44);
+	ExportedName = "PositionB";
+	ExportedType = float3;
+	Semantic = 3D_Coordinate;
+	Type = Input;
+	VisibleByDefault = true;
+	TransformSpace = World;
+	TransformMode = Position;
+}
+CParticleNodePinIn	$26D24720
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$993E8A0B";
+}
+CParticleNodePinOut	$BD73BC75
+{
+	SelfName = "Value";
+	Owner = "$993E8A0B";
+	ConnectedPins = {
+		"$226FBF6D",
+	};
+}
+CParticleNodeTemplateExport	$EA7F8581
+{
+	InputPins = {
+		"$9E6E150D",
+	};
+	OutputPins = {
+		"$4ACDBAB1",
+	};
+	WorkspacePosition = int2(-770, -374);
+	ExportedName = "PositionA";
+	ExportedType = float3;
+	Semantic = 3D_Coordinate;
+	Type = Input;
+	VisibleByDefault = true;
+	TransformSpace = World;
+	TransformMode = Position;
+}
+CParticleNodePinIn	$9E6E150D
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$EA7F8581";
+}
+CParticleNodePinOut	$4ACDBAB1
+{
+	SelfName = "Value";
+	Owner = "$EA7F8581";
+	ConnectedPins = {
+		"$06776589",
+	};
+}
+CParticleNodePassThrough	$60C78A57
+{
+	InputPins = {
+		"$9140CA02",
+	};
+	OutputPins = {
+		"$3DA8DB22",
+	};
+	WorkspacePosition = int2(176, 220);
+}
+CParticleNodePinIn	$9140CA02
+{
+	SelfName = "Value";
+	Owner = "$60C78A57";
+	ConnectedPins = {
+		"$FB808B55",
+	};
+}
+CParticleNodePinOut	$3DA8DB22
+{
+	SelfName = "Value";
+	Owner = "$60C78A57";
+	ConnectedPins = {
+		"$8D17591A",
+	};
+}
+CParticleNodeTemplateExport	$9AFAC8A4
+{
+	InputPins = {
+		"$E7B11090",
+	};
+	OutputPins = {
+		"$8AC9A170",
+	};
+	WorkspacePosition = int2(-572, 352);
+	ExportedName = "Color";
+	ExportedType = float4;
+	Semantic = Color;
+	Type = Input;
+	Order = 4;
+	CategoryName = {
+		"@eng:Rendering",
+	};
+	DefaultValueF4 = float4(1.0000000e+00, 1.0000000e+00, 1.0000000e+00, 1.0000000e+00);
+}
+CParticleNodePinIn	$E7B11090
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$9AFAC8A4";
+}
+CParticleNodePinOut	$8AC9A170
+{
+	SelfName = "Value";
+	Owner = "$9AFAC8A4";
+	ConnectedPins = {
+		"$D0C9F6D3",
+		"$F7356469",
+	};
+}
+CParticleNodePassThrough	$F41E0A20
+{
+	InputPins = {
+		"$F7356469",
+	};
+	OutputPins = {
+		"$E297D094",
+	};
+	WorkspacePosition = int2(220, 374);
+}
+CParticleNodePinIn	$F7356469
+{
+	SelfName = "Value";
+	Owner = "$F41E0A20";
+	ConnectedPins = {
+		"$8AC9A170",
+	};
+}
+CParticleNodePinOut	$E297D094
+{
+	SelfName = "Value";
+	Owner = "$F41E0A20";
+	ConnectedPins = {
+		"$EC922176",
+	};
+}
+CParticleNodeAnnotation	$5877AF05
+{
+	CustomName = {
+		"@eng:$(Graph.Name)",
+	};
+	Description = {
+		"@eng:$(Graph.Description)",
+	};
+	WorkspacePosition = int2(-792, -880);
+	SelfSize = int2(1430, 352);
+}
+CParticleNodeGraph	$36E86B33
+{
+	ClassType = Event;
+	Nodes = {
+		"$4CEA1CE4",
+		"$79C29DFE",
+		"$4F9EAF18",
+		"$67E13EF5",
+		"$7FCE6179",
+		"$573D1D14",
+		"$FA4E4927",
+		"$6A483812",
+		"$998970DE",
+		"$B3CF3ED7",
+		"$0AC9C074",
+		"$453F0A5A",
+		"$85ED21AE",
+		"$0989051E",
+		"$AF00C8FD",
+		"$5898E534",
+		"$7FE0E463",
+		"$3071F95F",
+		"$192BA8B5",
+		"$6228C180",
+		"$6305AF81",
+	};
+	WorkspaceZoom = -4;
+}
+CParticleNodeLayer	$AA925D4C
+{
+	InputPins = {
+		"$CB43DA38",
+	};
+	WorkspacePosition = int2(-946, -44);
+	NodeGraph = "$36E86B33";
+}
+CParticleNodePinIn	$CB43DA38
+{
+	SelfName = "Spawn";
+	Type = event;
+	Owner = "$AA925D4C";
+	BaseType = event;
+	ConnectedPins = {
+		"$14978373",
+	};
+}
+CParticleNodeSetLife	$4CEA1CE4
+{
+	InputPins = {
+		"$6E05C963",
+	};
+	WorkspacePosition = int2(1364, 572);
+}
+CParticleNodePinIn	$6E05C963
+{
+	SelfName = "Life";
+	Type = float;
+	Owner = "$4CEA1CE4";
+	BaseType = float;
+	ValueF = float4(inf, 1.0000000e+00, 1.0000000e+00, 1.0000000e+00);
+}
+CParticleNodeConstant	$79C29DFE
+{
+	OutputPins = {
+		"$2EDAE131",
+	};
+	WorkspacePosition = int2(352, 1012);
+}
+CParticleNodePinOut	$2EDAE131
+{
+	SelfName = "Value";
+	Owner = "$79C29DFE";
+}
+CParticleNodeConstant	$4F9EAF18
+{
+	OutputPins = {
+		"$7CD38B1B",
+	};
+	WorkspacePosition = int2(352, 1166);
+	Type = bool;
+	ValueB4 = bool4(true, false, false, false);
+}
+CParticleNodePinOut	$7CD38B1B
+{
+	SelfName = "Value";
+	Owner = "$4F9EAF18";
+}
+CParticleNodeGraph	$3AC97FE7
+{
+	CustomName = "ShiftRegister";
+	Description = {
+		"@eng:shift and registers",
+	};
+	Nodes = {
+		"$FDEFDD01",
+		"$63164D65",
+		"$47DEE267",
+		"$3AF5DBD7",
+		"$7A3F69F0",
+		"$AFF277D0",
+		"$E5C1D63A",
+		"$D3224AFD",
+		"$6C927823",
+		"$E22CB187",
+		"$B279D061",
+		"$96240D32",
+		"$E266A9B7",
+		"$1C238855",
+		"$EE20A8CB",
+		"$53BBB75E",
+		"$DF418807",
+		"$58682026",
+		"$526FB26B",
+		"$A45AEEF3",
+		"$042F411C",
+		"$12515DBB",
+		"$A38ACA8A",
+		"$3E037665",
+		"$40760167",
+		"$2A76D563",
+		"$0F1019AF",
+		"$16DFA903",
+		"$8A151A4A",
+		"$28D245E3",
+		"$4AFEF780",
+		"$1C0A7E05",
+		"$8EE0B879",
+		"$1C575228",
+		"$FB6320DE",
+		"$EC706ACB",
+		"$5F24FBF8",
+		"$88CD092A",
+		"$CEEBEA6C",
+		"$02A24535",
+		"$1A977B85",
+		"$864B50BC",
+		"$6DB11A3F",
+		"$E220CCEA",
+		"$F4B8AB5B",
+		"$C013156A",
+		"$036C268F",
+		"$C85E84B9",
+		"$D97F56A6",
+	};
+	WorkspaceZoom = -4;
+}
+CParticleNodeDiscretizationPoint	$FDEFDD01
+{
+	InputPins = {
+		"$505CC113",
+	};
+	OutputPins = {
+		"$6B97E10A",
+	};
+	WorkspacePosition = int2(726, 572);
+}
+CParticleNodePinIn	$505CC113
+{
+	SelfName = "Value";
+	Owner = "$FDEFDD01";
+	ConnectedPins = {
+		"$37CBA798",
+	};
+}
+CParticleNodePinOut	$6B97E10A
+{
+	SelfName = "Value";
+	Owner = "$FDEFDD01";
+	ConnectedPins = {
+		"$74AFB1CD",
+	};
+}
+CParticleNodeMathFunction3	$63164D65
+{
+	InputPins = {
+		"$CA3456CC",
+		"$2C6D9B9D",
+		"$C39EEEF7",
+	};
+	OutputPins = {
+		"$835361BE",
+	};
+	WorkspacePosition = int2(506, 418);
+	Function = Select;
+}
+CParticleNodePinIn	$CA3456CC
+{
+	SelfName = "Value";
+	Owner = "$63164D65";
+	ConnectedPins = {
+		"$D8D9F9A0",
+	};
+}
+CParticleNodePinIn	$2C6D9B9D
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$63164D65";
+	ConnectedPins = {
+		"$744326D1",
+	};
+}
+CParticleNodePinIn	$C39EEEF7
+{
+	SelfName = "Condition";
+	Owner = "$63164D65";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$835361BE
+{
+	SelfName = "Value";
+	Owner = "$63164D65";
+	ConnectedPins = {
+		"$309602F9",
+	};
+}
+CParticleNodeDiscretizationPoint	$47DEE267
+{
+	InputPins = {
+		"$9F90F91E",
+	};
+	OutputPins = {
+		"$08EB8091",
+	};
+	WorkspacePosition = int2(726, 264);
+}
+CParticleNodePinIn	$9F90F91E
+{
+	SelfName = "Value";
+	Owner = "$47DEE267";
+	ConnectedPins = {
+		"$1E8A018A",
+	};
+}
+CParticleNodePinOut	$08EB8091
+{
+	SelfName = "Value";
+	Owner = "$47DEE267";
+	ConnectedPins = {
+		"$8FF21967",
+	};
+}
+CParticleNodeDiscretizationPoint	$3AF5DBD7
+{
+	InputPins = {
+		"$F65936A7",
+	};
+	OutputPins = {
+		"$83970344",
+	};
+	WorkspacePosition = int2(220, -506);
+}
+CParticleNodePinIn	$F65936A7
+{
+	SelfName = "Value";
+	Owner = "$3AF5DBD7";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$83970344
+{
+	SelfName = "Value";
+	Owner = "$3AF5DBD7";
+	ConnectedPins = {
+		"$CD1DE8E5",
+		"$8A5CE06E",
+	};
+}
+CParticleNodeEvaluateAtSpawn	$7A3F69F0
+{
+	InputPins = {
+		"$3922B171",
+	};
+	OutputPins = {
+		"$2A61AD8B",
+	};
+	WorkspacePosition = int2(-352, -506);
+}
+CParticleNodePinIn	$3922B171
+{
+	SelfName = "Value";
+	Type = float;
+	Owner = "$7A3F69F0";
+	ConnectedPins = {
+		"$60196C50",
+	};
+}
+CParticleNodePinOut	$2A61AD8B
+{
+	SelfName = "Value";
+	Owner = "$7A3F69F0";
+	ConnectedPins = {
+		"$BE373EFD",
+	};
+}
+CParticleNodeDiscretizationPoint	$AFF277D0
+{
+	InputPins = {
+		"$067E6FCB",
+	};
+	OutputPins = {
+		"$26CE473D",
+	};
+	WorkspacePosition = int2(726, 880);
+}
+CParticleNodePinIn	$067E6FCB
+{
+	SelfName = "Value";
+	Owner = "$AFF277D0";
+	ConnectedPins = {
+		"$DACADA6C",
+	};
+}
+CParticleNodePinOut	$26CE473D
+{
+	SelfName = "Value";
+	Owner = "$AFF277D0";
+	ConnectedPins = {
+		"$4563847D",
+	};
+}
+CParticleNodeDiscretizationPoint	$E5C1D63A
+{
+	InputPins = {
+		"$4062D749",
+	};
+	OutputPins = {
+		"$174B084C",
+	};
+	WorkspacePosition = int2(220, -44);
+}
+CParticleNodePinIn	$4062D749
+{
+	SelfName = "Value";
+	Owner = "$E5C1D63A";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$174B084C
+{
+	SelfName = "Value";
+	Owner = "$E5C1D63A";
+	ConnectedPins = {
+		"$D017D517",
+		"$D66D9007",
+	};
+}
+CParticleNodeDiscretizationPoint	$D3224AFD
+{
+	InputPins = {
+		"$37E6801D",
+	};
+	OutputPins = {
+		"$7D2D3232",
+	};
+	WorkspacePosition = int2(220, 110);
+}
+CParticleNodePinIn	$37E6801D
+{
+	SelfName = "Value";
+	Owner = "$D3224AFD";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$7D2D3232
+{
+	SelfName = "Value";
+	Owner = "$D3224AFD";
+	ConnectedPins = {
+		"$B7EEDEAF",
+		"$A2E81E9F",
+	};
+}
+CParticleNodeDiscretizationPoint	$6C927823
+{
+	InputPins = {
+		"$9A7E6339",
+	};
+	OutputPins = {
+		"$D8D9F9A0",
+	};
+	WorkspacePosition = int2(220, 418);
+}
+CParticleNodePinIn	$9A7E6339
+{
+	SelfName = "Value";
+	Owner = "$6C927823";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$D8D9F9A0
+{
+	SelfName = "Value";
+	Owner = "$6C927823";
+	ConnectedPins = {
+		"$CA3456CC",
+		"$4186AFB7",
+	};
+}
+CParticleNodeDiscretizationPoint	$E22CB187
+{
+	InputPins = {
+		"$ABDE33FE",
+	};
+	OutputPins = {
+		"$FC39BB8B",
+	};
+	WorkspacePosition = int2(220, 880);
+}
+CParticleNodePinIn	$ABDE33FE
+{
+	SelfName = "Value";
+	Owner = "$E22CB187";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$FC39BB8B
+{
+	SelfName = "Value";
+	Owner = "$E22CB187";
+	ConnectedPins = {
+		"$31FA7215",
+	};
+}
+CParticleNodeMathFunction3	$B279D061
+{
+	InputPins = {
+		"$E73478B4",
+		"$BC08ECEC",
+		"$B5C0FD60",
+	};
+	OutputPins = {
+		"$D0AB5DED",
+	};
+	WorkspacePosition = int2(506, 726);
+	Function = Select;
+}
+CParticleNodePinIn	$E73478B4
+{
+	SelfName = "Value";
+	Owner = "$B279D061";
+	ConnectedPins = {
+		"$E621AF6B",
+	};
+}
+CParticleNodePinIn	$BC08ECEC
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$B279D061";
+	ConnectedPins = {
+		"$3B4BB771",
+	};
+}
+CParticleNodePinIn	$B5C0FD60
+{
+	SelfName = "Condition";
+	Owner = "$B279D061";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$D0AB5DED
+{
+	SelfName = "Value";
+	Owner = "$B279D061";
+	ConnectedPins = {
+		"$DDBA9B7E",
+	};
+}
+CParticleNodePassThrough	$96240D32
+{
+	InputPins = {
+		"$6EC95E1A",
+	};
+	OutputPins = {
+		"$D069F83A",
+	};
+	WorkspacePosition = int2(-528, -396);
+}
+CParticleNodePinIn	$6EC95E1A
+{
+	SelfName = "Value";
+	Owner = "$96240D32";
+	ConnectedPins = {
+		"$F5010806",
+	};
+}
+CParticleNodePinOut	$D069F83A
+{
+	SelfName = "Value";
+	Owner = "$96240D32";
+	ConnectedPins = {
+		"$49C8420E",
+	};
+}
+CParticleNodeMathFunction3	$E266A9B7
+{
+	InputPins = {
+		"$FA67179A",
+		"$8A5CE06E",
+		"$DE3EEB37",
+	};
+	OutputPins = {
+		"$312C4EFD",
+	};
+	WorkspacePosition = int2(506, -352);
+	Function = Select;
+}
+CParticleNodePinIn	$FA67179A
+{
+	SelfName = "Value";
+	Owner = "$E266A9B7";
+	ConnectedPins = {
+		"$D30613B9",
+	};
+}
+CParticleNodePinIn	$8A5CE06E
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$E266A9B7";
+	ConnectedPins = {
+		"$83970344",
+	};
+}
+CParticleNodePinIn	$DE3EEB37
+{
+	SelfName = "Condition";
+	Owner = "$E266A9B7";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$312C4EFD
+{
+	SelfName = "Value";
+	Owner = "$E266A9B7";
+	ConnectedPins = {
+		"$01B66776",
+	};
+}
+CParticleNodeMathFunction3	$1C238855
+{
+	InputPins = {
+		"$D017D517",
+		"$5E8BEFBD",
+		"$DC8BFF55",
+	};
+	OutputPins = {
+		"$CBE1541A",
+	};
+	WorkspacePosition = int2(506, -44);
+	Function = Select;
+}
+CParticleNodePinIn	$D017D517
+{
+	SelfName = "Value";
+	Owner = "$1C238855";
+	ConnectedPins = {
+		"$174B084C",
+	};
+}
+CParticleNodePinIn	$5E8BEFBD
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$1C238855";
+	ConnectedPins = {
+		"$4A69B5C2",
+	};
+}
+CParticleNodePinIn	$DC8BFF55
+{
+	SelfName = "Condition";
+	Owner = "$1C238855";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$CBE1541A
+{
+	SelfName = "Value";
+	Owner = "$1C238855";
+	ConnectedPins = {
+		"$98B54545",
+	};
+}
+CParticleNodeDiscretizationPoint	$EE20A8CB
+{
+	InputPins = {
+		"$2141F78C",
+	};
+	OutputPins = {
+		"$AFB5DC72",
+	};
+	WorkspacePosition = int2(726, 110);
+}
+CParticleNodePinIn	$2141F78C
+{
+	SelfName = "Value";
+	Owner = "$EE20A8CB";
+	ConnectedPins = {
+		"$448C8698",
+	};
+}
+CParticleNodePinOut	$AFB5DC72
+{
+	SelfName = "Value";
+	Owner = "$EE20A8CB";
+	ConnectedPins = {
+		"$40D08198",
+	};
+}
+CParticleNodeDiscretizationPoint	$53BBB75E
+{
+	InputPins = {
+		"$E2BF50D0",
+	};
+	OutputPins = {
+		"$3B4BB771",
+	};
+	WorkspacePosition = int2(220, 572);
+}
+CParticleNodePinIn	$E2BF50D0
+{
+	SelfName = "Value";
+	Owner = "$53BBB75E";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$3B4BB771
+{
+	SelfName = "Value";
+	Owner = "$53BBB75E";
+	ConnectedPins = {
+		"$F7DA277E",
+		"$BC08ECEC",
+	};
+}
+CParticleNodeAnnotation	$DF418807
+{
+	CustomName = {
+		"@eng:$(Graph.Name)",
+	};
+	Description = {
+		"@eng:$(Graph.Description)",
+	};
+	WorkspacePosition = int2(-528, -1408);
+	SelfSize = int2(1430, 352);
+}
+CParticleNodeDiscretizationPoint	$58682026
+{
+	InputPins = {
+		"$EA152ABA",
+	};
+	OutputPins = {
+		"$51DCD6D3",
+	};
+	WorkspacePosition = int2(726, -198);
+}
+CParticleNodePinIn	$EA152ABA
+{
+	SelfName = "Value";
+	Owner = "$58682026";
+	ConnectedPins = {
+		"$C9501BF4",
+	};
+}
+CParticleNodePinOut	$51DCD6D3
+{
+	SelfName = "Value";
+	Owner = "$58682026";
+	ConnectedPins = {
+		"$AF83A114",
+	};
+}
+CParticleNodeDiscretizationPoint	$526FB26B
+{
+	InputPins = {
+		"$98B54545",
+	};
+	OutputPins = {
+		"$DDB76A16",
+	};
+	WorkspacePosition = int2(726, -44);
+}
+CParticleNodePinIn	$98B54545
+{
+	SelfName = "Value";
+	Owner = "$526FB26B";
+	ConnectedPins = {
+		"$CBE1541A",
+	};
+}
+CParticleNodePinOut	$DDB76A16
+{
+	SelfName = "Value";
+	Owner = "$526FB26B";
+	ConnectedPins = {
+		"$7AB94B24",
+	};
+}
+CParticleNodeMathFunction3	$A45AEEF3
+{
+	InputPins = {
+		"$0CD0CB4B",
+		"$BDB6CCFB",
+		"$9D3EEC8A",
+	};
+	OutputPins = {
+		"$C9501BF4",
+	};
+	WorkspacePosition = int2(506, -198);
+	Function = Select;
+}
+CParticleNodePinIn	$0CD0CB4B
+{
+	SelfName = "Value";
+	Owner = "$A45AEEF3";
+	ConnectedPins = {
+		"$4A69B5C2",
+	};
+}
+CParticleNodePinIn	$BDB6CCFB
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$A45AEEF3";
+	ConnectedPins = {
+		"$D30613B9",
+	};
+}
+CParticleNodePinIn	$9D3EEC8A
+{
+	SelfName = "Condition";
+	Owner = "$A45AEEF3";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$C9501BF4
+{
+	SelfName = "Value";
+	Owner = "$A45AEEF3";
+	ConnectedPins = {
+		"$EA152ABA",
+	};
+}
+CParticleNodeDiscretizationPoint	$042F411C
+{
+	InputPins = {
+		"$D7C3CCB5",
+	};
+	OutputPins = {
+		"$AF15D162",
+	};
+	WorkspacePosition = int2(726, -506);
+}
+CParticleNodePinIn	$D7C3CCB5
+{
+	SelfName = "Value";
+	Owner = "$042F411C";
+	ConnectedPins = {
+		"$4216A2AB",
+	};
+}
+CParticleNodePinOut	$AF15D162
+{
+	SelfName = "Value";
+	Owner = "$042F411C";
+	ConnectedPins = {
+		"$82CE490C",
+	};
+}
+CParticleNodeDiscretizationPoint	$12515DBB
+{
+	InputPins = {
+		"$B46ADAF5",
+	};
+	OutputPins = {
+		"$744326D1",
+	};
+	WorkspacePosition = int2(220, 264);
+}
+CParticleNodePinIn	$B46ADAF5
+{
+	SelfName = "Value";
+	Owner = "$12515DBB";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$744326D1
+{
+	SelfName = "Value";
+	Owner = "$12515DBB";
+	ConnectedPins = {
+		"$29A6096E",
+		"$2C6D9B9D",
+	};
+}
+CParticleNodeDiscretizationPoint	$A38ACA8A
+{
+	InputPins = {
+		"$31BA36B4",
+	};
+	OutputPins = {
+		"$E621AF6B",
+	};
+	WorkspacePosition = int2(220, 726);
+}
+CParticleNodePinIn	$31BA36B4
+{
+	SelfName = "Value";
+	Owner = "$A38ACA8A";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$E621AF6B
+{
+	SelfName = "Value";
+	Owner = "$A38ACA8A";
+	ConnectedPins = {
+		"$E73478B4",
+		"$BC6DC60E",
+	};
+}
+CParticleNodeMathFunction3	$3E037665
+{
+	InputPins = {
+		"$CD1DE8E5",
+		"$208539B4",
+		"$41A64C57",
+	};
+	OutputPins = {
+		"$4216A2AB",
+	};
+	WorkspacePosition = int2(506, -506);
+	Function = Select;
+}
+CParticleNodePinIn	$CD1DE8E5
+{
+	SelfName = "Value";
+	Owner = "$3E037665";
+	ConnectedPins = {
+		"$83970344",
+	};
+}
+CParticleNodePinIn	$208539B4
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$3E037665";
+	ConnectedPins = {
+		"$60196C50",
+	};
+}
+CParticleNodePinIn	$41A64C57
+{
+	SelfName = "Condition";
+	Owner = "$3E037665";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$4216A2AB
+{
+	SelfName = "Value";
+	Owner = "$3E037665";
+	ConnectedPins = {
+		"$D7C3CCB5",
+	};
+}
+CParticleNodeMathFunction3	$40760167
+{
+	InputPins = {
+		"$B7EEDEAF",
+		"$D66D9007",
+		"$905288F8",
+	};
+	OutputPins = {
+		"$448C8698",
+	};
+	WorkspacePosition = int2(506, 110);
+	Function = Select;
+}
+CParticleNodePinIn	$B7EEDEAF
+{
+	SelfName = "Value";
+	Owner = "$40760167";
+	ConnectedPins = {
+		"$7D2D3232",
+	};
+}
+CParticleNodePinIn	$D66D9007
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$40760167";
+	ConnectedPins = {
+		"$174B084C",
+	};
+}
+CParticleNodePinIn	$905288F8
+{
+	SelfName = "Condition";
+	Owner = "$40760167";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$448C8698
+{
+	SelfName = "Value";
+	Owner = "$40760167";
+	ConnectedPins = {
+		"$2141F78C",
+	};
+}
+CParticleNodeDiscretizationPoint	$2A76D563
+{
+	InputPins = {
+		"$DDBA9B7E",
+	};
+	OutputPins = {
+		"$8B2A7E7F",
+	};
+	WorkspacePosition = int2(726, 726);
+}
+CParticleNodePinIn	$DDBA9B7E
+{
+	SelfName = "Value";
+	Owner = "$2A76D563";
+	ConnectedPins = {
+		"$D0AB5DED",
+	};
+}
+CParticleNodePinOut	$8B2A7E7F
+{
+	SelfName = "Value";
+	Owner = "$2A76D563";
+	ConnectedPins = {
+		"$336538C4",
+	};
+}
+CParticleNodeMathFunction3	$0F1019AF
+{
+	InputPins = {
+		"$29A6096E",
+		"$A2E81E9F",
+		"$EAC26F26",
+	};
+	OutputPins = {
+		"$1E8A018A",
+	};
+	WorkspacePosition = int2(506, 264);
+	Function = Select;
+}
+CParticleNodePinIn	$29A6096E
+{
+	SelfName = "Value";
+	Owner = "$0F1019AF";
+	ConnectedPins = {
+		"$744326D1",
+	};
+}
+CParticleNodePinIn	$A2E81E9F
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$0F1019AF";
+	ConnectedPins = {
+		"$7D2D3232",
+	};
+}
+CParticleNodePinIn	$EAC26F26
+{
+	SelfName = "Condition";
+	Owner = "$0F1019AF";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$1E8A018A
+{
+	SelfName = "Value";
+	Owner = "$0F1019AF";
+	ConnectedPins = {
+		"$9F90F91E",
+	};
+}
+CParticleNodePassThrough	$16DFA903
+{
+	InputPins = {
+		"$B9A17BE4",
+	};
+	OutputPins = {
+		"$67619D59",
+	};
+	WorkspacePosition = int2(0, -484);
+}
+CParticleNodePinIn	$B9A17BE4
+{
+	SelfName = "Value";
+	Owner = "$16DFA903";
+	ConnectedPins = {
+		"$3186967D",
+	};
+}
+CParticleNodePinOut	$67619D59
+{
+	SelfName = "Value";
+	Owner = "$16DFA903";
+	ConnectedPins = {
+		"$F65936A7",
+		"$63C29633",
+		"$99F836EE",
+		"$4062D749",
+		"$37E6801D",
+		"$B46ADAF5",
+		"$ABDE33FE",
+		"$31BA36B4",
+		"$E2BF50D0",
+		"$9A7E6339",
+	};
+}
+CParticleNodeDiscretizationPoint	$8A151A4A
+{
+	InputPins = {
+		"$63C29633",
+	};
+	OutputPins = {
+		"$D30613B9",
+	};
+	WorkspacePosition = int2(220, -352);
+}
+CParticleNodePinIn	$63C29633
+{
+	SelfName = "Value";
+	Owner = "$8A151A4A";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$D30613B9
+{
+	SelfName = "Value";
+	Owner = "$8A151A4A";
+	ConnectedPins = {
+		"$FA67179A",
+		"$BDB6CCFB",
+	};
+}
+CParticleNodeMathFunction3	$28D245E3
+{
+	InputPins = {
+		"$F7DA277E",
+		"$4186AFB7",
+		"$4B4A19ED",
+	};
+	OutputPins = {
+		"$37CBA798",
+	};
+	WorkspacePosition = int2(506, 572);
+	Function = Select;
+}
+CParticleNodePinIn	$F7DA277E
+{
+	SelfName = "Value";
+	Owner = "$28D245E3";
+	ConnectedPins = {
+		"$3B4BB771",
+	};
+}
+CParticleNodePinIn	$4186AFB7
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$28D245E3";
+	ConnectedPins = {
+		"$D8D9F9A0",
+	};
+}
+CParticleNodePinIn	$4B4A19ED
+{
+	SelfName = "Condition";
+	Owner = "$28D245E3";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$37CBA798
+{
+	SelfName = "Value";
+	Owner = "$28D245E3";
+	ConnectedPins = {
+		"$505CC113",
+	};
+}
+CParticleNodeDiscretizationPoint	$4AFEF780
+{
+	InputPins = {
+		"$309602F9",
+	};
+	OutputPins = {
+		"$B2BC44BA",
+	};
+	WorkspacePosition = int2(726, 418);
+}
+CParticleNodePinIn	$309602F9
+{
+	SelfName = "Value";
+	Owner = "$4AFEF780";
+	ConnectedPins = {
+		"$835361BE",
+	};
+}
+CParticleNodePinOut	$B2BC44BA
+{
+	SelfName = "Value";
+	Owner = "$4AFEF780";
+	ConnectedPins = {
+		"$53E7681D",
+	};
+}
+CParticleNodeDiscretizationPoint	$1C0A7E05
+{
+	InputPins = {
+		"$99F836EE",
+	};
+	OutputPins = {
+		"$4A69B5C2",
+	};
+	WorkspacePosition = int2(220, -198);
+}
+CParticleNodePinIn	$99F836EE
+{
+	SelfName = "Value";
+	Owner = "$1C0A7E05";
+	ConnectedPins = {
+		"$67619D59",
+	};
+}
+CParticleNodePinOut	$4A69B5C2
+{
+	SelfName = "Value";
+	Owner = "$1C0A7E05";
+	ConnectedPins = {
+		"$0CD0CB4B",
+		"$5E8BEFBD",
+	};
+}
+CParticleNodeMathFunction3	$8EE0B879
+{
+	InputPins = {
+		"$31FA7215",
+		"$BC6DC60E",
+		"$1643F089",
+	};
+	OutputPins = {
+		"$DACADA6C",
+	};
+	WorkspacePosition = int2(506, 880);
+	Function = Select;
+}
+CParticleNodePinIn	$31FA7215
+{
+	SelfName = "Value";
+	Owner = "$8EE0B879";
+	ConnectedPins = {
+		"$FC39BB8B",
+	};
+}
+CParticleNodePinIn	$BC6DC60E
+{
+	SelfName = "ValueIfTrue";
+	Owner = "$8EE0B879";
+	ConnectedPins = {
+		"$E621AF6B",
+	};
+}
+CParticleNodePinIn	$1643F089
+{
+	SelfName = "Condition";
+	Owner = "$8EE0B879";
+	ConnectedPins = {
+		"$1C4049B3",
+	};
+}
+CParticleNodePinOut	$DACADA6C
+{
+	SelfName = "Value";
+	Owner = "$8EE0B879";
+	ConnectedPins = {
+		"$067E6FCB",
+	};
+}
+CParticleNodeDiscretizationPoint	$1C575228
+{
+	InputPins = {
+		"$01B66776",
+	};
+	OutputPins = {
+		"$261A109B",
+	};
+	WorkspacePosition = int2(726, -352);
+}
+CParticleNodePinIn	$01B66776
+{
+	SelfName = "Value";
+	Owner = "$1C575228";
+	ConnectedPins = {
+		"$312C4EFD",
+	};
+}
+CParticleNodePinOut	$261A109B
+{
+	SelfName = "Value";
+	Owner = "$1C575228";
+	ConnectedPins = {
+		"$0DA30FC4",
+	};
+}
+CParticleNodePassThrough	$FB6320DE
+{
+	InputPins = {
+		"$49C8420E",
+	};
+	OutputPins = {
+		"$1C4049B3",
+	};
+	WorkspacePosition = int2(352, -396);
+}
+CParticleNodePinIn	$49C8420E
+{
+	SelfName = "Value";
+	Owner = "$FB6320DE";
+	ConnectedPins = {
+		"$D069F83A",
+	};
+}
+CParticleNodePinOut	$1C4049B3
+{
+	SelfName = "Value";
+	Owner = "$FB6320DE";
+	ConnectedPins = {
+		"$41A64C57",
+		"$DE3EEB37",
+		"$9D3EEC8A",
+		"$DC8BFF55",
+		"$905288F8",
+		"$EAC26F26",
+		"$C39EEEF7",
+		"$4B4A19ED",
+		"$B5C0FD60",
+		"$1643F089",
+	};
+}
+CParticleNodeTemplateExport	$EC706ACB
+{
+	InputPins = {
+		"$6BB37538",
+	};
+	OutputPins = {
+		"$F5010806",
+	};
+	WorkspacePosition = int2(-792, -330);
+	ExportedName = "Shift";
+	Type = Input;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$6BB37538
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$EC706ACB";
+}
+CParticleNodePinOut	$F5010806
+{
+	SelfName = "Value";
+	Owner = "$EC706ACB";
+	ConnectedPins = {
+		"$6EC95E1A",
+	};
+}
+CParticleNodeTemplateExport	$5F24FBF8
+{
+	InputPins = {
+		"$E12F8487",
+	};
+	OutputPins = {
+		"$60196C50",
+	};
+	WorkspacePosition = int2(-792, -462);
+	ExportedName = "Value";
+	Type = Input;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$E12F8487
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$5F24FBF8";
+}
+CParticleNodePinOut	$60196C50
+{
+	SelfName = "Value";
+	Owner = "$5F24FBF8";
+	ConnectedPins = {
+		"$208539B4",
+		"$3922B171",
+	};
+}
+CParticleNodeTemplate	$67E13EF5
+{
+	InputPins = {
+		"$019B548F",
+		"$2594579F",
+	};
+	OutputPins = {
+		"$16C7A7DD",
+		"$DDD9DB82",
+		"$17483251",
+		"$2C9F04B4",
+		"$92C51B6F",
+		"$C449787B",
+		"$85C7279F",
+		"$D2091F47",
+		"$1F645355",
+		"$C976B964",
+	};
+	WorkspacePosition = int2(946, 1012);
+	SubGraphName = "ShiftRegister";
+}
+CParticleNodePinIn	$019B548F
+{
+	SelfName = "Value";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$7BC14AF5",
+	};
+}
+CParticleNodePinIn	$2594579F
+{
+	SelfName = "Shift";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$78C8B740",
+	};
+}
+CParticleNodeTemplateExport	$88CD092A
+{
+	InputPins = {
+		"$82CE490C",
+	};
+	WorkspacePosition = int2(924, -506);
+	ExportedName = "Value0";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$82CE490C
+{
+	SelfName = "Value";
+	Owner = "$88CD092A";
+	ConnectedPins = {
+		"$AF15D162",
+	};
+}
+CParticleNodePinOut	$16C7A7DD
+{
+	SelfName = "Value0";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$FAF3317E",
+	};
+}
+CParticleNodeTemplateExport	$CEEBEA6C
+{
+	InputPins = {
+		"$0DA30FC4",
+	};
+	WorkspacePosition = int2(924, -352);
+	ExportedName = "Value1";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$0DA30FC4
+{
+	SelfName = "Value";
+	Owner = "$CEEBEA6C";
+	ConnectedPins = {
+		"$261A109B",
+	};
+}
+CParticleNodePinOut	$DDD9DB82
+{
+	SelfName = "Value1";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$4C718328",
+	};
+}
+CParticleNodeTemplateExport	$02A24535
+{
+	InputPins = {
+		"$AF83A114",
+	};
+	WorkspacePosition = int2(924, -198);
+	ExportedName = "Value2";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$AF83A114
+{
+	SelfName = "Value";
+	Owner = "$02A24535";
+	ConnectedPins = {
+		"$51DCD6D3",
+	};
+}
+CParticleNodePinOut	$17483251
+{
+	SelfName = "Value2";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$77D2B70C",
+	};
+}
+CParticleNodeTemplateExport	$1A977B85
+{
+	InputPins = {
+		"$7AB94B24",
+	};
+	WorkspacePosition = int2(924, -44);
+	ExportedName = "Value3";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$7AB94B24
+{
+	SelfName = "Value";
+	Owner = "$1A977B85";
+	ConnectedPins = {
+		"$DDB76A16",
+	};
+}
+CParticleNodePinOut	$2C9F04B4
+{
+	SelfName = "Value3";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$CFDC0877",
+	};
+}
+CParticleNodeTemplateExport	$864B50BC
+{
+	InputPins = {
+		"$40D08198",
+	};
+	WorkspacePosition = int2(924, 110);
+	ExportedName = "Value4";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$40D08198
+{
+	SelfName = "Value";
+	Owner = "$864B50BC";
+	ConnectedPins = {
+		"$AFB5DC72",
+	};
+}
+CParticleNodePinOut	$92C51B6F
+{
+	SelfName = "Value4";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$D4258F19",
+	};
+}
+CParticleNodeTemplateExport	$6DB11A3F
+{
+	InputPins = {
+		"$8FF21967",
+	};
+	WorkspacePosition = int2(924, 264);
+	ExportedName = "Value5";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$8FF21967
+{
+	SelfName = "Value";
+	Owner = "$6DB11A3F";
+	ConnectedPins = {
+		"$08EB8091",
+	};
+}
+CParticleNodePinOut	$C449787B
+{
+	SelfName = "Value5";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$92F1E05F",
+	};
+}
+CParticleNodeTemplateExport	$E220CCEA
+{
+	InputPins = {
+		"$53E7681D",
+	};
+	WorkspacePosition = int2(924, 418);
+	ExportedName = "Value6";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$53E7681D
+{
+	SelfName = "Value";
+	Owner = "$E220CCEA";
+	ConnectedPins = {
+		"$B2BC44BA",
+	};
+}
+CParticleNodePinOut	$85C7279F
+{
+	SelfName = "Value6";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$D172BE03",
+	};
+}
+CParticleNodeTemplateExport	$F4B8AB5B
+{
+	InputPins = {
+		"$74AFB1CD",
+	};
+	WorkspacePosition = int2(924, 572);
+	ExportedName = "Value7";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$74AFB1CD
+{
+	SelfName = "Value";
+	Owner = "$F4B8AB5B";
+	ConnectedPins = {
+		"$6B97E10A",
+	};
+}
+CParticleNodePinOut	$D2091F47
+{
+	SelfName = "Value7";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$D3C30593",
+	};
+}
+CParticleNodeTemplateExport	$C013156A
+{
+	InputPins = {
+		"$336538C4",
+	};
+	WorkspacePosition = int2(924, 726);
+	ExportedName = "Value8";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$336538C4
+{
+	SelfName = "Value";
+	Owner = "$C013156A";
+	ConnectedPins = {
+		"$8B2A7E7F",
+	};
+}
+CParticleNodePinOut	$1F645355
+{
+	SelfName = "Value8";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$541FFF7F",
+	};
+}
+CParticleNodeTemplateExport	$036C268F
+{
+	InputPins = {
+		"$4563847D",
+	};
+	WorkspacePosition = int2(924, 880);
+	ExportedName = "Value9";
+	Type = Output;
+	VisibleByDefault = true;
+}
+CParticleNodePinIn	$4563847D
+{
+	SelfName = "Value";
+	Owner = "$036C268F";
+	ConnectedPins = {
+		"$26CE473D",
+	};
+}
+CParticleNodePinOut	$C976B964
+{
+	SelfName = "Value9";
+	Owner = "$67E13EF5";
+	ConnectedPins = {
+		"$ADE49D30",
+	};
+}
+CParticleNodeMathFunction2	$7FCE6179
+{
+	ExecStage = Evolve;
+	InputPins = {
+		"$51B32C4F",
+		"$6F138230",
+	};
+	OutputPins = {
+		"$7BC14AF5",
+	};
+	WorkspacePosition = int2(418, 770);
+	Function = Rand;
+}
+CParticleNodePinIn	$51B32C4F
+{
+	SelfName = "Value";
+	Owner = "$7FCE6179";
+}
+CParticleNodePinIn	$6F138230
+{
+	SelfName = "ValueB";
+	Type = float3;
+	Owner = "$7FCE6179";
+	ValueF = float4(1.0000000e+00, 1.0000000e+00, 1.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$7BC14AF5
+{
+	SelfName = "Value";
+	Owner = "$7FCE6179";
+	ConnectedPins = {
+		"$019B548F",
+	};
+}
+CParticleNodeTemplate	$573D1D14
+{
+	InputPins = {
+		"$66C4C92D",
+	};
+	OutputPins = {
+		"$78C8B740",
+	};
+	WorkspacePosition = int2(308, 1342);
+	SubGraphFilePath = "PopcornFX/Library/PopcornFXCore/Templates/Core.pkfx";
+	SubGraphName = "Ticker";
+}
+CParticleNodePinIn	$66C4C92D
+{
+	SelfName = "Delay";
+	Type = float;
+	Visible = false;
+	Owner = "$573D1D14";
+	BaseType = float;
+	ValueF = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$78C8B740
+{
+	SelfName = "HasTicked";
+	Type = bool;
+	Owner = "$573D1D14";
+	BaseType = bool;
+	ConnectedPins = {
+		"$2594579F",
+	};
+}
+CParticleNodeRendererBillboard	$FA4E4927
+{
+	InputPins = {
+		"$FAF3317E",
+		"$827F8DC2",
+		"$51A65B94",
+		"$7CCAB43B",
+		"$DD61B673",
+		"$575E0E67",
+		"$BBAB68F3",
+		"$5CE31751",
+		"$6DFF0290",
+		"$E9DD8D1D",
+		"$81B1BC8E",
+		"$FB95FFB6",
+		"$6CD7A673",
+		"$45378DBB",
+		"$C7812CFD",
+		"$627C4982",
+		"$230F276B",
+		"$C29330D6",
+		"$CBBA4E05",
+		"$5D7D458E",
+		"$B320BF5C",
+		"$336F166A",
+		"$3DA70294",
+		"$1F40E900",
+		"$37E9D514",
+		"$D76B2EFD",
+		"$F782764A",
+		"$F3FAB507",
+		"$99AEE3C9",
+	};
+	WorkspacePosition = int2(1738, 924);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$FAF3317E
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$FA4E4927";
+	BaseType = float3;
+	ConnectedPins = {
+		"$16C7A7DD",
+	};
+}
+CParticleNodePinIn	$827F8DC2
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$51A65B94
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$7CCAB43B
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$FA4E4927";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$DD61B673
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = float;
+}
+CParticleNodePinIn	$575E0E67
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$FA4E4927";
+	BaseType = float3;
+}
+CParticleNodePinIn	$BBAB68F3
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$FA4E4927";
+	BaseType = float3;
+}
+CParticleNodePinIn	$5CE31751
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = int;
+}
+CParticleNodePinIn	$6DFF0290
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$E9DD8D1D
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = int;
+}
+CParticleNodePinIn	$81B1BC8E
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$FA4E4927";
+	BaseType = float;
+}
+CParticleNodePinIn	$FB95FFB6
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = int;
+}
+CParticleNodePinIn	$6CD7A673
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = float;
+}
+CParticleNodePinIn	$45378DBB
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$C7812CFD
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$627C4982
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$230F276B
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$C29330D6
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$CBBA4E05
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$5D7D458E
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$B320BF5C
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = float4;
+	ValueF = float4(8.7392321e-03, 1.0000000e+00, 0.0000000e+00, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$336F166A
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$3DA70294
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$1F40E900
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$37E9D514
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$D76B2EFD
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$F782764A
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$F3FAB507
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = bool;
+}
+CParticleNodePinIn	$99AEE3C9
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$FA4E4927";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$6A483812
+{
+	InputPins = {
+		"$4C718328",
+		"$2F36ADBB",
+		"$E7DB9111",
+		"$3586D44F",
+		"$6B7B4EF3",
+		"$29B6788F",
+		"$15BF9BEB",
+		"$ADFEB6F2",
+		"$F2D3FC48",
+		"$792590A0",
+		"$70B75504",
+		"$829A1986",
+		"$320F2DDB",
+		"$43AD958E",
+		"$6444EBCF",
+		"$13FA21B7",
+		"$3844A11D",
+		"$692CFA85",
+		"$6A595918",
+		"$30A6B652",
+		"$E82EFE46",
+		"$46A8CE2B",
+		"$374F8E23",
+		"$1192F902",
+		"$B32C0838",
+		"$ADCAE084",
+		"$56447F5D",
+		"$E3260279",
+		"$D58EE52D",
+	};
+	WorkspacePosition = int2(1738, 990);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$4C718328
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$6A483812";
+	BaseType = float3;
+	ConnectedPins = {
+		"$DDD9DB82",
+	};
+}
+CParticleNodePinIn	$2F36ADBB
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$E7DB9111
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$3586D44F
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$6A483812";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$6B7B4EF3
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = float;
+}
+CParticleNodePinIn	$29B6788F
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$6A483812";
+	BaseType = float3;
+}
+CParticleNodePinIn	$15BF9BEB
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$6A483812";
+	BaseType = float3;
+}
+CParticleNodePinIn	$ADFEB6F2
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = int;
+}
+CParticleNodePinIn	$F2D3FC48
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$792590A0
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = int;
+}
+CParticleNodePinIn	$70B75504
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$6A483812";
+	BaseType = float;
+}
+CParticleNodePinIn	$829A1986
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = int;
+}
+CParticleNodePinIn	$320F2DDB
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = float;
+}
+CParticleNodePinIn	$43AD958E
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$6444EBCF
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$13FA21B7
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$3844A11D
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$692CFA85
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$6A595918
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$30A6B652
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$E82EFE46
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = float4;
+	ValueF = float4(3.7844360e-01, 1.0000000e+00, 2.5878057e-03, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$46A8CE2B
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$374F8E23
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$1192F902
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$B32C0838
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$ADCAE084
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$56447F5D
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$E3260279
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = bool;
+}
+CParticleNodePinIn	$D58EE52D
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$6A483812";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$998970DE
+{
+	InputPins = {
+		"$77D2B70C",
+		"$AF16D476",
+		"$7BD9DEC8",
+		"$6FCBDF36",
+		"$5FECFA26",
+		"$D9F8E238",
+		"$9B689C7D",
+		"$52B93F84",
+		"$C49F6FAD",
+		"$A6100B7E",
+		"$939D77C8",
+		"$53D53027",
+		"$81449DD1",
+		"$D7BA5140",
+		"$4D996B09",
+		"$EAF35C07",
+		"$76C81E3B",
+		"$F9E13CE7",
+		"$DCA49011",
+		"$16C364D4",
+		"$C3D3A3F0",
+		"$8429F6AB",
+		"$2DF1862E",
+		"$A7E2FA23",
+		"$0B792B3A",
+		"$DFC87F75",
+		"$C5F16B71",
+		"$EA1A6080",
+		"$41964FB1",
+	};
+	WorkspacePosition = int2(1738, 1056);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$77D2B70C
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$998970DE";
+	BaseType = float3;
+	ConnectedPins = {
+		"$17483251",
+	};
+}
+CParticleNodePinIn	$AF16D476
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$7BD9DEC8
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$6FCBDF36
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$998970DE";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$5FECFA26
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = float;
+}
+CParticleNodePinIn	$D9F8E238
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$998970DE";
+	BaseType = float3;
+}
+CParticleNodePinIn	$9B689C7D
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$998970DE";
+	BaseType = float3;
+}
+CParticleNodePinIn	$52B93F84
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = int;
+}
+CParticleNodePinIn	$C49F6FAD
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$A6100B7E
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = int;
+}
+CParticleNodePinIn	$939D77C8
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$998970DE";
+	BaseType = float;
+}
+CParticleNodePinIn	$53D53027
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = int;
+}
+CParticleNodePinIn	$81449DD1
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = float;
+}
+CParticleNodePinIn	$D7BA5140
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$4D996B09
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$EAF35C07
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$76C81E3B
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$F9E13CE7
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$DCA49011
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$16C364D4
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$C3D3A3F0
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = float4;
+	ValueF = float4(1.0000000e+00, 3.7423360e-01, 4.0363185e-03, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$8429F6AB
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$2DF1862E
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$A7E2FA23
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$0B792B3A
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$DFC87F75
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$C5F16B71
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$EA1A6080
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$41964FB1
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$998970DE";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$B3CF3ED7
+{
+	InputPins = {
+		"$CFDC0877",
+		"$44C2C9EC",
+		"$CFF27E3C",
+		"$148BBF63",
+		"$1628F389",
+		"$A3B5A039",
+		"$DF9F04C1",
+		"$995D9943",
+		"$5F6E380B",
+		"$B0458EF4",
+		"$F742DAC0",
+		"$8DBF296B",
+		"$DF28CEB1",
+		"$75B1DB1B",
+		"$DDCE3DC8",
+		"$8FA65416",
+		"$46ADB891",
+		"$B760630B",
+		"$524D3D32",
+		"$C4321F18",
+		"$B34E4F0E",
+		"$27E2D740",
+		"$733A61C2",
+		"$CB0FA56E",
+		"$C3D1CF48",
+		"$86D930D8",
+		"$7DAB0BE0",
+		"$5E33DE67",
+		"$BDBE93D4",
+	};
+	WorkspacePosition = int2(1738, 1122);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$CFDC0877
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$B3CF3ED7";
+	BaseType = float3;
+	ConnectedPins = {
+		"$2C9F04B4",
+	};
+}
+CParticleNodePinIn	$44C2C9EC
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$CFF27E3C
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$148BBF63
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$B3CF3ED7";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$1628F389
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = float;
+}
+CParticleNodePinIn	$A3B5A039
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$B3CF3ED7";
+	BaseType = float3;
+}
+CParticleNodePinIn	$DF9F04C1
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$B3CF3ED7";
+	BaseType = float3;
+}
+CParticleNodePinIn	$995D9943
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = int;
+}
+CParticleNodePinIn	$5F6E380B
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$B0458EF4
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = int;
+}
+CParticleNodePinIn	$F742DAC0
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$B3CF3ED7";
+	BaseType = float;
+}
+CParticleNodePinIn	$8DBF296B
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = int;
+}
+CParticleNodePinIn	$DF28CEB1
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = float;
+}
+CParticleNodePinIn	$75B1DB1B
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$DDCE3DC8
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$8FA65416
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$46ADB891
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$B760630B
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$524D3D32
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$C4321F18
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$B34E4F0E
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = float4;
+	ValueF = float4(1.0000000e+00, 1.0829917e-01, 7.6745129e-03, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$27E2D740
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$733A61C2
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$CB0FA56E
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$C3D1CF48
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$86D930D8
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$7DAB0BE0
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$5E33DE67
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = bool;
+}
+CParticleNodePinIn	$BDBE93D4
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$B3CF3ED7";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$0AC9C074
+{
+	InputPins = {
+		"$D4258F19",
+		"$8990332E",
+		"$CDBAF7D7",
+		"$82E9A094",
+		"$9F871BA9",
+		"$BB5AD573",
+		"$0EA818D2",
+		"$AF46ABC7",
+		"$47079772",
+		"$3E549D79",
+		"$32E1F4DC",
+		"$7717EFE7",
+		"$416B87AD",
+		"$16C45FF5",
+		"$22A54EA8",
+		"$8574D61A",
+		"$74BB83C4",
+		"$85A0D811",
+		"$1A6B3CD4",
+		"$03958F1D",
+		"$76FFB0B9",
+		"$288813B6",
+		"$67F2AB5F",
+		"$887B773E",
+		"$0F315BA2",
+		"$62296219",
+		"$4FBBFFFE",
+		"$FC0CE487",
+		"$568BEDEA",
+	};
+	WorkspacePosition = int2(1738, 1188);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$D4258F19
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$0AC9C074";
+	BaseType = float3;
+	ConnectedPins = {
+		"$92C51B6F",
+	};
+}
+CParticleNodePinIn	$8990332E
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$CDBAF7D7
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$82E9A094
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$0AC9C074";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$9F871BA9
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = float;
+}
+CParticleNodePinIn	$BB5AD573
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$0AC9C074";
+	BaseType = float3;
+}
+CParticleNodePinIn	$0EA818D2
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$0AC9C074";
+	BaseType = float3;
+}
+CParticleNodePinIn	$AF46ABC7
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = int;
+}
+CParticleNodePinIn	$47079772
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$3E549D79
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = int;
+}
+CParticleNodePinIn	$32E1F4DC
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$0AC9C074";
+	BaseType = float;
+}
+CParticleNodePinIn	$7717EFE7
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = int;
+}
+CParticleNodePinIn	$416B87AD
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = float;
+}
+CParticleNodePinIn	$16C45FF5
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$22A54EA8
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$8574D61A
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$74BB83C4
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$85A0D811
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$1A6B3CD4
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$03958F1D
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$76FFB0B9
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = float4;
+	ValueF = float4(1.0000000e+00, 0.0000000e+00, 3.3188857e-02, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$288813B6
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$67F2AB5F
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$887B773E
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$0F315BA2
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$62296219
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$4FBBFFFE
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$FC0CE487
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = bool;
+}
+CParticleNodePinIn	$568BEDEA
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$0AC9C074";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$453F0A5A
+{
+	InputPins = {
+		"$92F1E05F",
+		"$3370B424",
+		"$9CA163AA",
+		"$F8BCA5D4",
+		"$69F8EA66",
+		"$9667A60C",
+		"$C9AAB64D",
+		"$DAF4EC55",
+		"$70835BFF",
+		"$7F97A65D",
+		"$B59BAA70",
+		"$B03DC9B1",
+		"$0FA24384",
+		"$8924F57A",
+		"$D6692AF2",
+		"$7A6BE3D5",
+		"$36CB633C",
+		"$8DC69060",
+		"$FDF45DE9",
+		"$E64A8966",
+		"$E013115E",
+		"$2A88E05C",
+		"$E0B4BECE",
+		"$B46D5554",
+		"$B896F34B",
+		"$CEA9BD9B",
+		"$D977FC91",
+		"$16DE586B",
+		"$5BE9EB05",
+	};
+	WorkspacePosition = int2(1738, 1254);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$92F1E05F
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$453F0A5A";
+	BaseType = float3;
+	ConnectedPins = {
+		"$C449787B",
+	};
+}
+CParticleNodePinIn	$3370B424
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$9CA163AA
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$F8BCA5D4
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$453F0A5A";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$69F8EA66
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = float;
+}
+CParticleNodePinIn	$9667A60C
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$453F0A5A";
+	BaseType = float3;
+}
+CParticleNodePinIn	$C9AAB64D
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$453F0A5A";
+	BaseType = float3;
+}
+CParticleNodePinIn	$DAF4EC55
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = int;
+}
+CParticleNodePinIn	$70835BFF
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$7F97A65D
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = int;
+}
+CParticleNodePinIn	$B59BAA70
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$453F0A5A";
+	BaseType = float;
+}
+CParticleNodePinIn	$B03DC9B1
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = int;
+}
+CParticleNodePinIn	$0FA24384
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = float;
+}
+CParticleNodePinIn	$8924F57A
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$D6692AF2
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$7A6BE3D5
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$36CB633C
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$8DC69060
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$FDF45DE9
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$E64A8966
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$E013115E
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = float4;
+	ValueF = float4(1.0000000e+00, 1.6896117e-03, 2.1124096e-01, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$2A88E05C
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$E0B4BECE
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$B46D5554
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$B896F34B
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$CEA9BD9B
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$D977FC91
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$16DE586B
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = bool;
+}
+CParticleNodePinIn	$5BE9EB05
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$453F0A5A";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$85ED21AE
+{
+	InputPins = {
+		"$ADE49D30",
+		"$29A27A2E",
+		"$7BBB8140",
+		"$0285ED52",
+		"$679F74C1",
+		"$63FCF47E",
+		"$711C900E",
+		"$FA139E3E",
+		"$034D5A8B",
+		"$EF6FAA9C",
+		"$88B7F8EC",
+		"$C004573D",
+		"$FB5F72F1",
+		"$024E05EB",
+		"$184070BC",
+		"$C0D1747D",
+		"$E2C164C2",
+		"$A1750614",
+		"$37ADF136",
+		"$7517B334",
+		"$D97A8370",
+		"$CCD38D87",
+		"$54BF8F53",
+		"$4F9B3E32",
+		"$27C98E25",
+		"$4CEA6B00",
+		"$30525205",
+		"$509CF991",
+		"$A65E297C",
+	};
+	WorkspacePosition = int2(1738, 1518);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$ADE49D30
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$85ED21AE";
+	BaseType = float3;
+	ConnectedPins = {
+		"$C976B964",
+	};
+}
+CParticleNodePinIn	$29A27A2E
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$7BBB8140
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$0285ED52
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$85ED21AE";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$679F74C1
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = float;
+}
+CParticleNodePinIn	$63FCF47E
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$85ED21AE";
+	BaseType = float3;
+}
+CParticleNodePinIn	$711C900E
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$85ED21AE";
+	BaseType = float3;
+}
+CParticleNodePinIn	$FA139E3E
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = int;
+}
+CParticleNodePinIn	$034D5A8B
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$EF6FAA9C
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = int;
+}
+CParticleNodePinIn	$88B7F8EC
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$85ED21AE";
+	BaseType = float;
+}
+CParticleNodePinIn	$C004573D
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = int;
+}
+CParticleNodePinIn	$FB5F72F1
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = float;
+}
+CParticleNodePinIn	$024E05EB
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$184070BC
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$C0D1747D
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$E2C164C2
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$A1750614
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$37ADF136
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$7517B334
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$D97A8370
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = float4;
+	ValueF = float4(2.7418737e-03, 9.9146873e-01, 1.0000000e+00, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$CCD38D87
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$54BF8F53
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$4F9B3E32
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$27C98E25
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$4CEA6B00
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$30525205
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$509CF991
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = bool;
+}
+CParticleNodePinIn	$A65E297C
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$85ED21AE";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$0989051E
+{
+	InputPins = {
+		"$541FFF7F",
+		"$F0DC594E",
+		"$D53F2496",
+		"$04FB496A",
+		"$EE1B02C1",
+		"$0E675F8D",
+		"$74A874FD",
+		"$2286BCB0",
+		"$EC4214EA",
+		"$3A4CEC0E",
+		"$50C9B755",
+		"$2269EE6D",
+		"$F4FED0B7",
+		"$47803C3D",
+		"$1FB8FC7D",
+		"$E9F7B624",
+		"$F65D1CB8",
+		"$3E6533A7",
+		"$0C6CED92",
+		"$D6B8A33E",
+		"$717005A6",
+		"$6049949E",
+		"$08390028",
+		"$231EEACE",
+		"$0E99D959",
+		"$EA35E641",
+		"$124B34F3",
+		"$04508A14",
+		"$06832064",
+	};
+	WorkspacePosition = int2(1738, 1452);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$541FFF7F
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$0989051E";
+	BaseType = float3;
+	ConnectedPins = {
+		"$1F645355",
+	};
+}
+CParticleNodePinIn	$F0DC594E
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$D53F2496
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$04FB496A
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$0989051E";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$EE1B02C1
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = float;
+}
+CParticleNodePinIn	$0E675F8D
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$0989051E";
+	BaseType = float3;
+}
+CParticleNodePinIn	$74A874FD
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$0989051E";
+	BaseType = float3;
+}
+CParticleNodePinIn	$2286BCB0
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = int;
+}
+CParticleNodePinIn	$EC4214EA
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$3A4CEC0E
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = int;
+}
+CParticleNodePinIn	$50C9B755
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$0989051E";
+	BaseType = float;
+}
+CParticleNodePinIn	$2269EE6D
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = int;
+}
+CParticleNodePinIn	$F4FED0B7
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = float;
+}
+CParticleNodePinIn	$47803C3D
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$1FB8FC7D
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$E9F7B624
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$F65D1CB8
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$3E6533A7
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$0C6CED92
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$D6B8A33E
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$717005A6
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = float4;
+	ValueF = float4(9.1355649e-04, 1.6755468e-01, 1.0000000e+00, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$6049949E
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$08390028
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$231EEACE
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$0E99D959
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$EA35E641
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$124B34F3
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$04508A14
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = bool;
+}
+CParticleNodePinIn	$06832064
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$0989051E";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$AF00C8FD
+{
+	InputPins = {
+		"$D3C30593",
+		"$0B80D0DA",
+		"$AF773CB1",
+		"$1DC47DB6",
+		"$F6AAB6CC",
+		"$FDDDC33C",
+		"$33C9B1A5",
+		"$19447D63",
+		"$8FD52728",
+		"$182B3E9A",
+		"$9EE302A9",
+		"$E2C8A6C6",
+		"$BD3B0B1E",
+		"$79C499FD",
+		"$D3283B82",
+		"$5264E88F",
+		"$0DA854DE",
+		"$93CDD3E2",
+		"$F9AD93F5",
+		"$1390D8D0",
+		"$93217899",
+		"$5D083100",
+		"$432A9B1E",
+		"$E481B90B",
+		"$1F84449A",
+		"$4F12748E",
+		"$55747A5F",
+		"$53245C89",
+		"$75677982",
+	};
+	WorkspacePosition = int2(1738, 1386);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$D3C30593
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$AF00C8FD";
+	BaseType = float3;
+	ConnectedPins = {
+		"$D2091F47",
+	};
+}
+CParticleNodePinIn	$0B80D0DA
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$AF773CB1
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$1DC47DB6
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$AF00C8FD";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$F6AAB6CC
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = float;
+}
+CParticleNodePinIn	$FDDDC33C
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$AF00C8FD";
+	BaseType = float3;
+}
+CParticleNodePinIn	$33C9B1A5
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$AF00C8FD";
+	BaseType = float3;
+}
+CParticleNodePinIn	$19447D63
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = int;
+}
+CParticleNodePinIn	$8FD52728
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$182B3E9A
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = int;
+}
+CParticleNodePinIn	$9EE302A9
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$AF00C8FD";
+	BaseType = float;
+}
+CParticleNodePinIn	$E2C8A6C6
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = int;
+}
+CParticleNodePinIn	$BD3B0B1E
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = float;
+}
+CParticleNodePinIn	$79C499FD
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$D3283B82
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$5264E88F
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$0DA854DE
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$93CDD3E2
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$F9AD93F5
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$1390D8D0
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$93217899
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = float4;
+	ValueF = float4(3.1977650e-02, 3.5601074e-03, 1.0000000e+00, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$5D083100
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$432A9B1E
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$E481B90B
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$1F84449A
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$4F12748E
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$55747A5F
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$53245C89
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = bool;
+}
+CParticleNodePinIn	$75677982
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$AF00C8FD";
+	BaseType = float2;
+}
+CParticleNodeRendererBillboard	$5898E534
+{
+	InputPins = {
+		"$D172BE03",
+		"$8B4A4FAE",
+		"$583E5842",
+		"$CDE328FD",
+		"$E3B8DE61",
+		"$96224AF4",
+		"$0EDB21C7",
+		"$CE850CE5",
+		"$BC68D4CF",
+		"$A6B62A62",
+		"$35A50E00",
+		"$53825399",
+		"$12B4FBB9",
+		"$62A4706E",
+		"$D81DB866",
+		"$13FF1D57",
+		"$50006BA8",
+		"$5EA3C38E",
+		"$83F4E8DA",
+		"$773D5D2C",
+		"$3647525D",
+		"$58F1E92E",
+		"$6075C626",
+		"$DA908DBF",
+		"$42F0C7FD",
+		"$D1647943",
+		"$C7AF4F61",
+		"$B613C7F1",
+		"$AB511255",
+	};
+	WorkspacePosition = int2(1738, 1320);
+	Material = "PopcornFX/Library/PopcornFXCore/Materials/Billboard_Transparent.pkma";
+	RendererFeatures = {
+		"GeometryBillboard",
+		"ComputeVelocity",
+		"EnableRendering",
+		"Transparent",
+		"Diffuse",
+		"DiffuseRamp",
+		"Lit",
+		"NormalWrap",
+		"NormalBend",
+		"Emissive",
+		"EmissiveRamp",
+		"AlphaRemap",
+		"SoftParticles",
+		"Atlas",
+		"BasicTransformUVs",
+		"TransformUVs",
+		"FastLit",
+	};
+}
+CParticleNodePinIn	$D172BE03
+{
+	SelfName = "General.Position";
+	Type = float3;
+	Owner = "$5898E534";
+	BaseType = float3;
+	ConnectedPins = {
+		"$85C7279F",
+	};
+}
+CParticleNodePinIn	$8B4A4FAE
+{
+	SelfName = "General.EnableSize2D";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$583E5842
+{
+	SelfName = "General.Size";
+	Type = float;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = float;
+	ValueF = float4(5.0000001e-02, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$CDE328FD
+{
+	SelfName = "General.Size2";
+	Type = float2;
+	Owner = "$5898E534";
+	BaseType = float2;
+	ValueF = float4(5.0000001e-02, 5.0000001e-02, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$E3B8DE61
+{
+	SelfName = "General.Rotation";
+	Type = float;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = float;
+}
+CParticleNodePinIn	$96224AF4
+{
+	SelfName = "General.Axis";
+	Type = float3;
+	Owner = "$5898E534";
+	BaseType = float3;
+}
+CParticleNodePinIn	$0EDB21C7
+{
+	SelfName = "General.NormalAxis";
+	Type = float3;
+	Owner = "$5898E534";
+	BaseType = float3;
+}
+CParticleNodePinIn	$CE850CE5
+{
+	SelfName = "General.BillboardingMode";
+	Type = int;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = int;
+}
+CParticleNodePinIn	$BC68D4CF
+{
+	SelfName = "General.Enabled";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$A6B62A62
+{
+	SelfName = "Transparent.SortMode";
+	Type = int;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = int;
+}
+CParticleNodePinIn	$35A50E00
+{
+	SelfName = "Transparent.SortKey";
+	Type = float;
+	Owner = "$5898E534";
+	BaseType = float;
+}
+CParticleNodePinIn	$53825399
+{
+	SelfName = "Transparent.GlobalSortOverride";
+	Type = int;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = int;
+}
+CParticleNodePinIn	$12B4FBB9
+{
+	SelfName = "Transparent.CameraSortOffset";
+	Type = float;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = float;
+}
+CParticleNodePinIn	$62A4706E
+{
+	SelfName = "Diffuse";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$D81DB866
+{
+	SelfName = "DiffuseRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$13FF1D57
+{
+	SelfName = "Lit";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$50006BA8
+{
+	SelfName = "NormalWrap";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$5EA3C38E
+{
+	SelfName = "NormalBend";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$83F4E8DA
+{
+	SelfName = "Emissive";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$773D5D2C
+{
+	SelfName = "Emissive.EmissiveMap";
+	Type = dataImage;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = dataImage;
+	ValueB = bool4(true, false, false, false);
+	ValueD = "PopcornFX/Library/PopcornFXCore/Materials/DefaultTextures/White.dds";
+}
+CParticleNodePinIn	$3647525D
+{
+	SelfName = "Emissive.EmissiveColor";
+	Type = float4;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = float4;
+	ValueF = float4(6.3586438e-01, 0.0000000e+00, 1.0000000e+00, 1.0000000e+00);
+	ValueB = bool4(true, false, false, false);
+}
+CParticleNodePinIn	$58F1E92E
+{
+	SelfName = "EmissiveRamp";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$6075C626
+{
+	SelfName = "AlphaRemap";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$DA908DBF
+{
+	SelfName = "SoftParticles";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$42F0C7FD
+{
+	SelfName = "Atlas";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$D1647943
+{
+	SelfName = "BasicTransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$C7AF4F61
+{
+	SelfName = "TransformUVs";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$B613C7F1
+{
+	SelfName = "FastLit";
+	Type = bool;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = bool;
+}
+CParticleNodePinIn	$AB511255
+{
+	SelfName = "Pivot";
+	Type = float2;
+	Visible = false;
+	Owner = "$5898E534";
+	BaseType = float2;
+}
+CParticleNodeTemplate	$7FE0E463
+{
+	ExecStage = Evolve;
+	OutputPins = {
+		"$DF92FEB3",
+	};
+	WorkspacePosition = int2(792, 770);
+	SubGraphFilePath = "PopcornFX/Library/PopcornFXCore/Templates/Core.pkfx";
+	SubGraphName = "scene.tickID";
+}
+CParticleNodePinOut	$DF92FEB3
+{
+	SelfName = "TickID";
+	Type = int;
+	Owner = "$7FE0E463";
+	BaseType = int;
+}
+CParticleNodeTemplate	$3071F95F
+{
+	ExecStage = Evolve;
+	InputPins = {
+		"$EEB8BFF7",
+	};
+	OutputPins = {
+		"$3179A901",
+	};
+	WorkspacePosition = int2(0, 484);
+	SubGraphFilePath = "PopcornFX/Library/PopcornFXCore/Templates/Core.pkfx";
+	SubGraphName = "scene.time";
+}
+CParticleNodePinIn	$EEB8BFF7
+{
+	SelfName = "Scale";
+	Type = float;
+	Visible = false;
+	Owner = "$3071F95F";
+	BaseType = float;
+	ValueF = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$3179A901
+{
+	SelfName = "Time";
+	Type = float;
+	Owner = "$3071F95F";
+	BaseType = float;
+	ConnectedPins = {
+		"$E95CC009",
+	};
+}
+CParticleNodeSwizzle	$192BA8B5
+{
+	InputPins = {
+		"$E95CC009",
+	};
+	OutputPins = {
+		"$600AEB32",
+	};
+	WorkspacePosition = int2(308, 374);
+	Dimension = 3D;
+	Y = X;
+	Z = X;
+}
+CParticleNodePinIn	$E95CC009
+{
+	SelfName = "Value";
+	Type = float;
+	Owner = "$192BA8B5";
+	ConnectedPins = {
+		"$3179A901",
+	};
+}
+CParticleNodePinOut	$600AEB32
+{
+	SelfName = "Value";
+	Owner = "$192BA8B5";
+	ConnectedPins = {
+		"$03612D04",
+	};
+}
+CParticleNodeArithmetic	$6228C180
+{
+	InputPins = {
+		"$03612D04",
+		"$41EEE5FA",
+	};
+	OutputPins = {
+		"$F0413069",
+	};
+	WorkspacePosition = int2(638, 550);
+}
+CParticleNodePinIn	$03612D04
+{
+	SelfName = "Value";
+	Owner = "$6228C180";
+	ConnectedPins = {
+		"$600AEB32",
+	};
+}
+CParticleNodePinIn	$41EEE5FA
+{
+	SelfName = "ValueB";
+	Owner = "$6228C180";
+	ConnectedPins = {
+		"$A2B5555C",
+	};
+}
+CParticleNodePinOut	$F0413069
+{
+	SelfName = "Value";
+	Owner = "$6228C180";
+}
+CParticleNodeMathFunction2	$6305AF81
+{
+	ExecStage = Evolve;
+	InputPins = {
+		"$242F3AE0",
+		"$98703E2B",
+	};
+	OutputPins = {
+		"$A2B5555C",
+	};
+	WorkspacePosition = int2(132, 616);
+	Function = Rand;
+}
+CParticleNodePinIn	$242F3AE0
+{
+	SelfName = "Value";
+	Owner = "$6305AF81";
+}
+CParticleNodePinIn	$98703E2B
+{
+	SelfName = "ValueB";
+	Type = float;
+	Owner = "$6305AF81";
+	ValueF = float4(9.9999997e-05, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$A2B5555C
+{
+	SelfName = "Value";
+	Owner = "$6305AF81";
+	ConnectedPins = {
+		"$41EEE5FA",
+	};
+}
+CParticleNodeDisableOptimizations	$C85E84B9
+{
+	InputPins = {
+		"$BE373EFD",
+	};
+	OutputPins = {
+		"$3186967D",
+	};
+	WorkspacePosition = int2(-176, -506);
+}
+CParticleNodePinIn	$BE373EFD
+{
+	SelfName = "Value";
+	Owner = "$C85E84B9";
+	ConnectedPins = {
+		"$2A61AD8B",
+	};
+}
+CParticleNodePinOut	$3186967D
+{
+	SelfName = "Value";
+	Owner = "$C85E84B9";
+	ConnectedPins = {
+		"$B9A17BE4",
+	};
+}
+CParticleNodeAnnotation	$D97F56A6
+{
+	CustomName = {
+		"@eng:Note",
+	};
+	Description = {
+		"@eng:something fucky wucki is happening here with the compilo\\nIt works with floats but not with float3s",
+	};
+	WorkspacePosition = int2(-374, -792);
+	Scale = -1;
+	PostIt = true;
+	SelfSize = int2(560, 436);
 }

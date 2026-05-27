@@ -1,4 +1,5 @@
 # clanker code
+# create a list of templates in the given files
 
 import argparse
 import re
