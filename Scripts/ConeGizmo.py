@@ -1,4 +1,4 @@
-# This script creates a script that draws a cone gizmo in a debug view. The cone is defined by its forward direction, origin, radius, and color gradient.
+# This script creates a script that draws a cone gizmo in a debug view. The cone is defined by its forward direction, origin and radius.
 print('//inputs')
 print('//float3 Forward')
 print('//float3 Origin')
